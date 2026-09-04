@@ -1,0 +1,280 @@
+{
+  "brand": {
+    "name": "Casa Colina",
+    "kicker": "Abkhazia"
+  },
+  "nav": {
+    "stay": "Stay",
+    "village": "From the village",
+    "cars": "Cars",
+    "rent": "Rent items",
+    "explore": "Explore"
+  },
+  "common": {
+    "from": "from",
+    "perNight": "per night",
+    "perPerson": "per person",
+    "perDay": "per day",
+    "night": "night",
+    "nights": "nights",
+    "guests": "guests",
+    "deposit": "deposit",
+    "delivery": "delivery",
+    "pickup": "pick-up",
+    "inStock": "in stock",
+    "outOfStock": "out of stock",
+    "viewAll": "View all",
+    "back": "Back",
+    "learnMore": "Learn more",
+    "close": "Close",
+    "loading": "Loading…"
+  },
+  "home": {
+    "hero": {
+      "kicker": "Abkhazia · sea and mountains in one day",
+      "title": "A coast where people still know your name",
+      "lead": "A house on a farm, a car for the coast road, milk from the neighbours and a road into the mountains — arranged in one request, with nobody in between.",
+      "ctaPrimary": "Find a place to stay",
+      "ctaSecondary": "Where to go",
+      "scroll": "Scroll",
+      "places": {
+        "athos": "New Athos",
+        "ritsa": "Lake Ritsa",
+        "pitsunda": "Pitsunda"
+      }
+    },
+    "chooseSection": "Where to start",
+    "chooseTitle": "Five reasons to write to us",
+    "chooseLead": "Places to stay, trips, cars, gear and food — from the people who live here.",
+    "categories": {
+      "stay": {
+        "title": "Stay",
+        "desc": "Farm houses and rooms in family guest yards"
+      },
+      "village": {
+        "title": "From the village",
+        "desc": "Milk, matsoni, honey and eggs to your door"
+      },
+      "cars": {
+        "title": "Cars",
+        "desc": "For the coast road and the Ritsa gravel track"
+      },
+      "rent": {
+        "title": "Rent items",
+        "desc": "SUPs, bikes, loungers, tables, tents"
+      },
+      "explore": {
+        "title": "Explore",
+        "desc": "Ritsa, New Athos, Old Gagra, rafting"
+      }
+    },
+    "stats": {
+      "kicker": "What we have",
+      "properties": "farms and guest yards",
+      "rentals": "things to rent by the day",
+      "excursions": "routes with a driver-guide",
+      "provisions": "products from local families",
+      "note": "We are not an agency. We are a few families on the coast who let out their houses, drive guests into the mountains and sell what they grow."
+    },
+    "how": {
+      "kicker": "How it works",
+      "title": "No card payment on this site",
+      "lead": "You send a request, the owner replies personally, money changes hands on arrival.",
+      "one": {
+        "title": "Send a request",
+        "body": "Pick a house, a car or a route and give your dates. Nothing is charged — no invoice is issued."
+      },
+      "two": {
+        "title": "The owner replies",
+        "body": "Usually within a couple of hours. They confirm the dates, answer questions and arrange to meet you."
+      },
+      "three": {
+        "title": "Pay on arrival",
+        "body": "Cash, transfer, or however you agree. There is no site commission — the price is the owner's price."
+      }
+    },
+    "marquee": "Gagra · Pitsunda · Lake Ritsa · New Athos · Tsandripsh · Mussera · Bzyb · Gudauta · Lykhny · Sukhum",
+    "staysTitle": "Where to stay",
+    "exploreTitle": "Where to go",
+    "ctaTitle": "Didn't find what you needed?",
+    "ctaLead": "Tell us what your trip needs and we'll put it together.",
+    "ctaButton": "Get in touch"
+  },
+  "benefits": {
+    "bestPrice": "The owner's price",
+    "bestPriceDesc": "You book straight with the family, with no agency mark-up",
+    "noFees": "No service fees",
+    "noFeesDesc": "You pay for the stay; deposits come back to you",
+    "freeCancellation": "Free cancellation",
+    "freeCancellationDesc": "Cancel at no cost up to a few days before arrival"
+  },
+  "stay": {
+    "title": "Stay",
+    "lead": "Two ways to stay: rent a whole house on a farm, or a room in a guest yard with breakfast.",
+    "kind": {
+      "compound": "Whole house",
+      "hosted": "Room with a host"
+    },
+    "sleeps": "up to {count} guests",
+    "bedrooms": "{count} bedrooms",
+    "beds": "{count} beds",
+    "baths": "{count} bathrooms",
+    "sqm": "{count} m²",
+    "aboutPlace": "About the place",
+    "houseRules": "House rules",
+    "amenities": "Amenities",
+    "chooseUnit": "Choose a house",
+    "chooseRoom": "Choose a room",
+    "roomsAvailable": "{count} rooms of this type",
+    "theHost": "Your host",
+    "hostSince": "hosting since {year}",
+    "respondsIn": "replies in about {hours} h",
+    "speaks": "Languages",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "cancellation": "Cancellation",
+    "location": "Location",
+    "priceUnitNight": "per night",
+    "priceUnitPerson": "per person, per night"
+  },
+  "village": {
+    "title": "From the village",
+    "lead": "Food from local families — poured into your own container, brought to where you're staying.",
+    "soldBy": "Sold by",
+    "perUnit": "per {unit}",
+    "deliveryInfo": "Delivery",
+    "allProducts": "All products",
+    "category": {
+      "dairy": "Dairy",
+      "eggs": "Eggs",
+      "honey": "Honey",
+      "produce": "Fruit & veg",
+      "bakery": "Bakery",
+      "preserves": "Preserves"
+    }
+  },
+  "rent": {
+    "title": "Rent",
+    "lead": "Everything a visitor needs by the day: transport, water and beach gear, furniture.",
+    "perDay": "per day",
+    "deposit": "Deposit",
+    "quantityAvailable": "{count} available",
+    "deliveryYes": "Delivered to your stay",
+    "deliveryNo": "Pick-up only",
+    "pickup": "Where to collect",
+    "specs": "Specifications",
+    "category": {
+      "car": "Cars",
+      "water": "On the water",
+      "beach": "For the beach",
+      "camping": "Camping",
+      "bike": "Bicycles"
+    }
+  },
+  "explore": {
+    "title": "Explore",
+    "lead": "Small groups, early starts, and driver-guides who grew up here.",
+    "duration": "{hours} h",
+    "groupUpTo": "group of up to {count}",
+    "schedule": "Schedule",
+    "meetingPoint": "Meeting point",
+    "includes": "What's included",
+    "highlights": "What you'll see",
+    "perPerson": "per person"
+  },
+  "booking": {
+    "title": "Request to book",
+    "subtitleStay": "The owner will get in touch and confirm your dates. You pay on arrival or by transfer — no card payment on this site.",
+    "subtitleRental": "We'll confirm availability and arrange hand-over. Pay on collection.",
+    "subtitleExcursion": "We'll confirm your place in the group and the departure time.",
+    "subtitleProvision": "The seller will confirm stock and a delivery day.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone or WhatsApp",
+    "arrival": "Arrival",
+    "departure": "Departure",
+    "date": "Date",
+    "guests": "Guests",
+    "quantity": "Quantity",
+    "message": "Message",
+    "messagePlaceholder": "How many of you, what time suits, anything we should know",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "nightsSummary": "{count, plural, one {# night} other {# nights}}",
+    "estimate": "Around {total}",
+    "estimateNote": "The owner confirms the final amount",
+    "successTitle": "Request sent",
+    "successBody": "We have your request and will be in touch shortly.",
+    "sendAnother": "Send another",
+    "errors": {
+      "too_short": "Too short",
+      "bad_email": "Check the email address",
+      "end_before_start": "Departure must be after arrival",
+      "generic": "Couldn't send. Please try again."
+    },
+    "demoNotice": "This is a demo build. The request is not sent anywhere and nobody is watching for it — the database is not connected yet."
+  },
+  "amenities": {
+    "kitchen": "Kitchen",
+    "parking": "Parking",
+    "wifi": "Wi-Fi",
+    "washer": "Washing machine",
+    "terrace": "Terrace",
+    "garden": "Garden",
+    "sea_view": "Sea view",
+    "bbq": "Barbecue",
+    "breakfast": "Breakfast",
+    "shared_kitchen": "Shared kitchen",
+    "host_guiding": "Host shows you around",
+    "laundry_service": "Laundry on request",
+    "private_bath": "Private bathroom",
+    "shared_bath": "Shared bathroom",
+    "garden_entrance": "Separate garden entrance",
+    "ac": "Air conditioning",
+    "fan": "Fan",
+    "river_access": "River access"
+  },
+  "footer": {
+    "tagline": "Places to stay and everything else for a trip along the Abkhaz coast.",
+    "madeIn": "Made on the coast",
+    "rights": "All rights reserved",
+    "sections": {
+      "explore": "Sections",
+      "help": "Help"
+    },
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "locale": {
+    "label": "Language",
+    "ru": "Русский",
+    "en": "English",
+    "ab": "Аҧсшәа"
+  },
+  "reviews": {
+    "title": "Guest reviews",
+    "booked": "Stayed in",
+    "ownerReply": "Owner's reply"
+  },
+  "notFound": {
+    "kicker": "Error 404",
+    "title": "There's no page here",
+    "body": "The link may be out of date, or there's a typo in the address. You can head back to the front page or jump straight into a section.",
+    "home": "Go to the front page",
+    "sections": "Or try one of these"
+  },
+  "error": {
+    "kicker": "Something went wrong",
+    "title": "We couldn't load this page",
+    "body": "This looks like a temporary fault on our side. Try again — and if it keeps happening, write to us and we'll arrange things by hand.",
+    "retry": "Try again",
+    "home": "Go to the front page",
+    "reference": "Error reference",
+    "globalTitle": "The site isn't responding",
+    "globalBody": "An error stopped this page from being shown. Please reload.",
+    "reload": "Reload"
+  },
+  "loading": {
+    "label": "Loading"
+  }
+}

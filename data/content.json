@@ -1,0 +1,2252 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-04T06:09:02.436Z",
+  "properties": [
+    {
+      "id": "prop-ahmad-farm",
+      "slug": "ahmad-farm",
+      "kind": "compound",
+      "name": {
+        "ru": "Ферма Ахмада",
+        "en": "Ahmad Farm",
+        "ab": "Ферма Ахмада"
+      },
+      "tagline": {
+        "ru": "Три отдельных дома на склоне над Цандрипшем — море в пятнадцати минутах пешком.",
+        "en": "Three separate houses on the hillside above Tsandripsh — the sea a fifteen-minute walk away.",
+        "ab": "Три отдельных дома на склоне над Цандрипшем — море в пятнадцати минутах пешком."
+      },
+      "story": {
+        "ru": "Ахмад посадил этот мандариновый сад в девяностых, а первый дом построил для своей семьи. Сейчас на участке три отдельно стоящих дома, у каждого своя терраса, вход и вид на воду. Вы снимаете дом целиком — с кухней, двором и местом под машину. Утром хозяева оставляют у двери корзину с фруктами и зеленью из сада.",
+        "en": "Ahmad planted this tangerine orchard in the nineties and built the first house for his family. Today the plot holds three free-standing houses, each with its own terrace, entrance and view of the water. You rent a whole house — kitchen, yard and a parking spot included. In the morning the hosts leave a basket of fruit and greens from the garden by your door.",
+        "ab": "Ахмад посадил этот мандариновый сад в девяностых, а первый дом построил для своей семьи. Сейчас на участке три отдельно стоящих дома, у каждого своя терраса, вход и вид на воду. Вы снимаете дом целиком — с кухней, двором и местом под машину. Утром хозяева оставляют у двери корзину с фруктами и зеленью из сада."
+      },
+      "location": {
+        "region": {
+          "ru": "Гагрский район",
+          "en": "Gagra district",
+          "ab": "Гагрский район"
+        },
+        "area": {
+          "ru": "Цандрипш",
+          "en": "Tsandripsh",
+          "ab": "Цандрипш"
+        },
+        "lat": 43.378,
+        "lng": 40.096
+      },
+      "photos": [
+        {
+          "src": "/photos/coast-hillside.jpg",
+          "alt": {
+            "ru": "Дом на склоне среди мандариновых деревьев",
+            "en": "House on the hillside among tangerine trees",
+            "ab": "Дом на склоне среди мандариновых деревьев"
+          }
+        },
+        {
+          "src": "/photos/gagra-beach.jpg",
+          "alt": {
+            "ru": "Терраса с видом на море",
+            "en": "Terrace overlooking the sea",
+            "ab": "Терраса с видом на море"
+          }
+        },
+        {
+          "src": "/photos/boxwood-forest.jpg",
+          "alt": {
+            "ru": "Мандариновый сад",
+            "en": "Tangerine orchard",
+            "ab": "Мандариновый сад"
+          }
+        },
+        {
+          "src": "/photos/pitsunda-sea.jpg",
+          "alt": {
+            "ru": "Двор фермы",
+            "en": "Farm yard",
+            "ab": "Двор фермы"
+          }
+        }
+      ],
+      "amenities": [
+        "kitchen",
+        "parking",
+        "wifi",
+        "washer",
+        "terrace",
+        "garden",
+        "sea_view",
+        "bbq"
+      ],
+      "highlights": [
+        {
+          "ru": "15 минут пешком до галечного пляжа",
+          "en": "15-minute walk to the pebble beach",
+          "ab": "15 минут пешком до галечного пляжа"
+        },
+        {
+          "ru": "Каждый дом снимается целиком",
+          "en": "Each house is rented in full",
+          "ab": "Каждый дом снимается целиком"
+        },
+        {
+          "ru": "Фрукты и зелень из сада включены",
+          "en": "Fruit and greens from the garden included",
+          "ab": "Фрукты и зелень из сада включены"
+        },
+        {
+          "ru": "Место под машину у каждого дома",
+          "en": "A parking spot at every house",
+          "ab": "Место под машину у каждого дома"
+        }
+      ],
+      "checkIn": "14:00",
+      "checkOut": "11:00",
+      "houseRules": [
+        {
+          "ru": "Не курить внутри домов",
+          "en": "No smoking inside the houses",
+          "ab": "Не курить внутри домов"
+        },
+        {
+          "ru": "Тихий час с 23:00 до 8:00",
+          "en": "Quiet hours 23:00–08:00",
+          "ab": "Тихий час с 23:00 до 8:00"
+        },
+        {
+          "ru": "Можно с домашними животными по договорённости",
+          "en": "Pets allowed by prior arrangement",
+          "ab": "Можно с домашними животными по договорённости"
+        }
+      ],
+      "cancellation": {
+        "freeUntilDays": 7,
+        "note": {
+          "ru": "Бесплатная отмена за 7 дней до заезда. Позже — удерживается стоимость первой ночи.",
+          "en": "Free cancellation up to 7 days before arrival. After that the first night is charged.",
+          "ab": "Бесплатная отмена за 7 дней до заезда. Позже — удерживается стоимость первой ночи."
+        }
+      },
+      "rating": 4.9,
+      "reviewCount": 37,
+      "units": [
+        {
+          "id": "unit-ahmad-cedar",
+          "name": {
+            "ru": "Кедровый дом",
+            "en": "Cedar House",
+            "ab": "Кедровый дом"
+          },
+          "description": {
+            "ru": "Самый большой дом фермы: две спальни, большая кухня-гостиная и глубокая терраса под кедром.",
+            "en": "The largest house on the farm: two bedrooms, a big kitchen-living room and a deep terrace under a cedar.",
+            "ab": "Самый большой дом фермы: две спальни, большая кухня-гостиная и глубокая терраса под кедром."
+          },
+          "guests": 5,
+          "bedrooms": 2,
+          "beds": 3,
+          "baths": 1,
+          "sizeSqm": 78,
+          "pricePerNight": {
+            "amount": 6500,
+            "currency": "RUB"
+          },
+          "photos": [
+            {
+              "src": "/photos/boxwood-forest.jpg",
+              "alt": {
+                "ru": "Гостиная Кедрового дома",
+                "en": "Cedar House living room",
+                "ab": "Гостиная Кедрового дома"
+              }
+            },
+            {
+              "src": "/photos/coast-hillside.jpg",
+              "alt": {
+                "ru": "Спальня",
+                "en": "Bedroom",
+                "ab": "Спальня"
+              }
+            },
+            {
+              "src": "/photos/gagra-beach-wide.jpg",
+              "alt": {
+                "ru": "Терраса под кедром",
+                "en": "Terrace under the cedar",
+                "ab": "Терраса под кедром"
+              }
+            }
+          ],
+          "amenities": [
+            "kitchen",
+            "parking",
+            "wifi",
+            "washer",
+            "terrace",
+            "sea_view",
+            "bbq"
+          ]
+        },
+        {
+          "id": "unit-ahmad-tangerine",
+          "name": {
+            "ru": "Мандариновый дом",
+            "en": "Tangerine House",
+            "ab": "Мандариновый дом"
+          },
+          "description": {
+            "ru": "Одна спальня плюс диван-кровать, окна выходят прямо в сад. Подходит для пары или небольшой семьи.",
+            "en": "One bedroom plus a sofa bed, windows opening straight into the orchard. Good for a couple or a small family.",
+            "ab": "Одна спальня плюс диван-кровать, окна выходят прямо в сад. Подходит для пары или небольшой семьи."
+          },
+          "guests": 3,
+          "bedrooms": 1,
+          "beds": 2,
+          "baths": 1,
+          "sizeSqm": 46,
+          "pricePerNight": {
+            "amount": 4200,
+            "currency": "RUB"
+          },
+          "photos": [
+            {
+              "src": "/photos/coast-hillside.jpg",
+              "alt": {
+                "ru": "Спальня с видом в сад",
+                "en": "Bedroom facing the orchard",
+                "ab": "Спальня с видом в сад"
+              }
+            },
+            {
+              "src": "/photos/boxwood-forest.jpg",
+              "alt": {
+                "ru": "Кухня",
+                "en": "Kitchen",
+                "ab": "Кухня"
+              }
+            }
+          ],
+          "amenities": [
+            "kitchen",
+            "parking",
+            "wifi",
+            "terrace",
+            "garden"
+          ]
+        },
+        {
+          "id": "unit-ahmad-river",
+          "name": {
+            "ru": "Речной дом",
+            "en": "River House",
+            "ab": "Речной дом"
+          },
+          "description": {
+            "ru": "Небольшой дом в нижней части участка, ближе всего к тропе на пляж. Студия с кухонным углом и душем.",
+            "en": "A small house at the lower end of the plot, closest to the beach path. A studio with a kitchenette and a shower.",
+            "ab": "Небольшой дом в нижней части участка, ближе всего к тропе на пляж. Студия с кухонным углом и душем."
+          },
+          "guests": 2,
+          "bedrooms": 1,
+          "beds": 1,
+          "baths": 1,
+          "sizeSqm": 32,
+          "pricePerNight": {
+            "amount": 3400,
+            "currency": "RUB"
+          },
+          "photos": [
+            {
+              "src": "/photos/gagra-beach-wide.jpg",
+              "alt": {
+                "ru": "Студия Речного дома",
+                "en": "River House studio",
+                "ab": "Студия Речного дома"
+              }
+            },
+            {
+              "src": "/photos/gagra-beach.jpg",
+              "alt": {
+                "ru": "Крыльцо",
+                "en": "Porch",
+                "ab": "Крыльцо"
+              }
+            }
+          ],
+          "amenities": [
+            "kitchen",
+            "parking",
+            "wifi",
+            "terrace"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prop-moaz-farm",
+      "slug": "moaz-farm",
+      "kind": "hosted",
+      "name": {
+        "ru": "Ферма Моаз",
+        "en": "Moaz Farm",
+        "ab": "Ферма Моаз"
+      },
+      "tagline": {
+        "ru": "Гостевой дом в Мюссере: комнаты по числу гостей, завтрак и хозяин, который всё покажет.",
+        "en": "A guest house in Mussera: rooms priced per guest, breakfast, and a host who shows you around.",
+        "ab": "Гостевой дом в Мюссере: комнаты по числу гостей, завтрак и хозяин, который всё покажет."
+      },
+      "story": {
+        "ru": "Моаз — семейный гостевой дом на краю Мюссерского заповедника. Астан и Наала принимают гостей в отдельных комнатах основного дома и во флигеле. Цена — за человека, вместе с завтраком из своих яиц, молока и мёда. Астан водит гостей к морю через сосновый лес и подсказывает, куда съездить без толпы.",
+        "en": "Moaz is a family guest house on the edge of the Mussera reserve. Astan and Naala host guests in private rooms in the main house and the annexe. The price is per person and includes breakfast made with their own eggs, milk and honey. Astan walks guests to the sea through the pine forest and points you to the places without the crowds.",
+        "ab": "Моаз — семейный гостевой дом на краю Мюссерского заповедника. Астан и Наала принимают гостей в отдельных комнатах основного дома и во флигеле. Цена — за человека, вместе с завтраком из своих яиц, молока и мёда. Астан водит гостей к морю через сосновый лес и подсказывает, куда съездить без толпы."
+      },
+      "location": {
+        "region": {
+          "ru": "Гудаутский район",
+          "en": "Gudauta district",
+          "ab": "Гудаутский район"
+        },
+        "area": {
+          "ru": "Мюссера",
+          "en": "Mussera",
+          "ab": "Мюссера"
+        },
+        "lat": 43.18,
+        "lng": 40.42
+      },
+      "photos": [
+        {
+          "src": "/photos/mussera-ruins.jpg",
+          "alt": {
+            "ru": "Основной дом фермы Моаз",
+            "en": "The main house at Moaz Farm",
+            "ab": "Основной дом фермы Моаз"
+          }
+        },
+        {
+          "src": "/photos/boxwood-forest.jpg",
+          "alt": {
+            "ru": "Общая веранда с завтраком",
+            "en": "Shared veranda set for breakfast",
+            "ab": "Общая веранда с завтраком"
+          }
+        },
+        {
+          "src": "/photos/athos-bay.jpg",
+          "alt": {
+            "ru": "Сосновый лес по дороге к морю",
+            "en": "Pine forest on the way to the sea",
+            "ab": "Сосновый лес по дороге к морю"
+          }
+        },
+        {
+          "src": "/photos/pitsunda-sea.jpg",
+          "alt": {
+            "ru": "Двор и огород",
+            "en": "Yard and vegetable garden",
+            "ab": "Двор и огород"
+          }
+        }
+      ],
+      "amenities": [
+        "breakfast",
+        "parking",
+        "wifi",
+        "shared_kitchen",
+        "garden",
+        "host_guiding",
+        "laundry_service"
+      ],
+      "highlights": [
+        {
+          "ru": "Завтрак из продуктов фермы включён",
+          "en": "Farm-produce breakfast included",
+          "ab": "Завтрак из продуктов фермы включён"
+        },
+        {
+          "ru": "Хозяин провожает к морю через лес",
+          "en": "The host walks you to the sea through the forest",
+          "ab": "Хозяин провожает к морю через лес"
+        },
+        {
+          "ru": "Цена за человека, не за комнату",
+          "en": "Priced per person, not per room",
+          "ab": "Цена за человека, не за комнату"
+        },
+        {
+          "ru": "Трансфер от Гудауты по запросу",
+          "en": "Transfer from Gudauta on request",
+          "ab": "Трансфер от Гудауты по запросу"
+        }
+      ],
+      "checkIn": "13:00",
+      "checkOut": "11:00",
+      "houseRules": [
+        {
+          "ru": "Завтрак в общей веранде с 8:30 до 10:00",
+          "en": "Breakfast on the shared veranda 08:30–10:00",
+          "ab": "Завтрак в общей веранде с 8:30 до 10:00"
+        },
+        {
+          "ru": "Не курить в комнатах",
+          "en": "No smoking in the rooms",
+          "ab": "Не курить в комнатах"
+        },
+        {
+          "ru": "Тихий час после 22:30",
+          "en": "Quiet hours after 22:30",
+          "ab": "Тихий час после 22:30"
+        }
+      ],
+      "cancellation": {
+        "freeUntilDays": 5,
+        "note": {
+          "ru": "Бесплатная отмена за 5 дней до заезда.",
+          "en": "Free cancellation up to 5 days before arrival.",
+          "ab": "Бесплатная отмена за 5 дней до заезда."
+        }
+      },
+      "rating": 4.8,
+      "reviewCount": 52,
+      "host": {
+        "id": "host-astan",
+        "name": "Astan",
+        "since": 2016,
+        "about": {
+          "ru": "Астан вырос в Мюссере и знает каждую тропу от моря до реликтовой рощи. Держит гостевой дом вместе с женой Наалой, которая готовит завтраки из своих продуктов.",
+          "en": "Astan grew up in Mussera and knows every path from the sea to the relict grove. He runs the guest house with his wife Naala, who cooks breakfast from their own produce.",
+          "ab": "Астан вырос в Мюссере и знает каждую тропу от моря до реликтовой рощи. Держит гостевой дом вместе с женой Наалой, которая готовит завтраки из своих продуктов."
+        },
+        "languages": [
+          "Абхазский",
+          "Русский",
+          "English"
+        ],
+        "responseTimeHours": 2
+      },
+      "rooms": [
+        {
+          "id": "room-moaz-garden",
+          "name": {
+            "ru": "Садовая комната",
+            "en": "Garden Room",
+            "ab": "Садовая комната"
+          },
+          "description": {
+            "ru": "Комната в основном доме с отдельным входом из сада, двуспальная кровать, свой душ.",
+            "en": "A room in the main house with a separate garden entrance, a double bed and a private shower.",
+            "ab": "Комната в основном доме с отдельным входом из сада, двуспальная кровать, свой душ."
+          },
+          "guestsPerRoom": 2,
+          "pricePerPerson": {
+            "amount": 2200,
+            "currency": "RUB"
+          },
+          "quantity": 2,
+          "photos": [
+            {
+              "src": "/photos/boxwood-forest.jpg",
+              "alt": {
+                "ru": "Садовая комната",
+                "en": "Garden Room",
+                "ab": "Садовая комната"
+              }
+            },
+            {
+              "src": "/photos/mussera-ruins.jpg",
+              "alt": {
+                "ru": "Свой душ",
+                "en": "Private shower",
+                "ab": "Свой душ"
+              }
+            }
+          ],
+          "amenities": [
+            "private_bath",
+            "breakfast",
+            "garden_entrance",
+            "wifi",
+            "ac"
+          ]
+        },
+        {
+          "id": "room-moaz-annexe",
+          "name": {
+            "ru": "Комната во флигеле",
+            "en": "Annexe Room",
+            "ab": "Комната во флигеле"
+          },
+          "description": {
+            "ru": "Две односпальные кровати, общий санузел с одной соседней комнатой, тише всего вечером.",
+            "en": "Two single beds, a bathroom shared with one neighbouring room, quietest in the evening.",
+            "ab": "Две односпальные кровати, общий санузел с одной соседней комнатой, тише всего вечером."
+          },
+          "guestsPerRoom": 2,
+          "pricePerPerson": {
+            "amount": 1700,
+            "currency": "RUB"
+          },
+          "quantity": 3,
+          "photos": [
+            {
+              "src": "/photos/mussera-ruins.jpg",
+              "alt": {
+                "ru": "Комната во флигеле",
+                "en": "Annexe Room",
+                "ab": "Комната во флигеле"
+              }
+            }
+          ],
+          "amenities": [
+            "shared_bath",
+            "breakfast",
+            "wifi",
+            "fan"
+          ]
+        },
+        {
+          "id": "room-moaz-attic",
+          "name": {
+            "ru": "Мансарда",
+            "en": "Attic Room",
+            "ab": "Мансарда"
+          },
+          "description": {
+            "ru": "Большая комната под крышей основного дома, до трёх гостей, вид на море из окна.",
+            "en": "A large room under the roof of the main house, up to three guests, a sea view from the window.",
+            "ab": "Большая комната под крышей основного дома, до трёх гостей, вид на море из окна."
+          },
+          "guestsPerRoom": 3,
+          "pricePerPerson": {
+            "amount": 2000,
+            "currency": "RUB"
+          },
+          "quantity": 1,
+          "photos": [
+            {
+              "src": "/photos/athos-bay.jpg",
+              "alt": {
+                "ru": "Мансарда с видом на море",
+                "en": "Attic room with a sea view",
+                "ab": "Мансарда с видом на море"
+              }
+            },
+            {
+              "src": "/photos/pitsunda-sea.jpg",
+              "alt": {
+                "ru": "Уголок для чтения",
+                "en": "Reading corner",
+                "ab": "Уголок для чтения"
+              }
+            }
+          ],
+          "amenities": [
+            "private_bath",
+            "breakfast",
+            "sea_view",
+            "wifi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prop-bzyb-orchard",
+      "slug": "bzyb-orchard",
+      "kind": "compound",
+      "name": {
+        "ru": "Сад на Бзыби",
+        "en": "Bzyb Orchard",
+        "ab": "Сад на Бзыби"
+      },
+      "tagline": {
+        "ru": "Два дома у реки между Пицундой и Рицей — база для поездок в горы.",
+        "en": "Two houses by the river between Pitsunda and Ritsa — a base for trips into the mountains.",
+        "ab": "Два дома у реки между Пицундой и Рицей — база для поездок в горы."
+      },
+      "story": {
+        "ru": "Участок стоит на правом берегу Бзыби, там где долина ещё широкая. Два дома делят общий двор с большим орехом и выходом к воде. Отсюда полчаса до пляжей Пицунды и час до озера Рица, а вечером слышно только реку.",
+        "en": "The plot sits on the right bank of the Bzyb where the valley is still wide. Two houses share a yard with a big walnut tree and a path to the water. It is half an hour to the Pitsunda beaches and an hour to Lake Ritsa, and in the evening all you hear is the river.",
+        "ab": "Участок стоит на правом берегу Бзыби, там где долина ещё широкая. Два дома делят общий двор с большим орехом и выходом к воде. Отсюда полчаса до пляжей Пицунды и час до озера Рица, а вечером слышно только реку."
+      },
+      "location": {
+        "region": {
+          "ru": "Гагрский район",
+          "en": "Gagra district",
+          "ab": "Гагрский район"
+        },
+        "area": {
+          "ru": "Бзыпта",
+          "en": "Bzypta",
+          "ab": "Бзыпта"
+        },
+        "lat": 43.24,
+        "lng": 40.33
+      },
+      "photos": [
+        {
+          "src": "/photos/bzyb-river.jpg",
+          "alt": {
+            "ru": "Дома у реки Бзыбь",
+            "en": "Houses by the Bzyb river",
+            "ab": "Дома у реки Бзыбь"
+          }
+        },
+        {
+          "src": "/photos/boxwood-forest.jpg",
+          "alt": {
+            "ru": "Общий двор с орехом",
+            "en": "Shared yard with a walnut tree",
+            "ab": "Общий двор с орехом"
+          }
+        },
+        {
+          "src": "/photos/blue-lake.jpg",
+          "alt": {
+            "ru": "Река Бзыбь",
+            "en": "The Bzyb river",
+            "ab": "Река Бзыбь"
+          }
+        }
+      ],
+      "amenities": [
+        "kitchen",
+        "parking",
+        "wifi",
+        "river_access",
+        "garden",
+        "bbq",
+        "washer"
+      ],
+      "highlights": [
+        {
+          "ru": "Выход к реке с общего двора",
+          "en": "River access from the shared yard",
+          "ab": "Выход к реке с общего двора"
+        },
+        {
+          "ru": "30 минут до Пицунды, час до Рицы",
+          "en": "30 minutes to Pitsunda, an hour to Ritsa",
+          "ab": "30 минут до Пицунды, час до Рицы"
+        },
+        {
+          "ru": "Оба дома можно снять вместе для большой компании",
+          "en": "Both houses can be booked together for a group",
+          "ab": "Оба дома можно снять вместе для большой компании"
+        }
+      ],
+      "checkIn": "15:00",
+      "checkOut": "12:00",
+      "houseRules": [
+        {
+          "ru": "Костёр только в оборудованном очаге",
+          "en": "Fires only in the built fire pit",
+          "ab": "Костёр только в оборудованном очаге"
+        },
+        {
+          "ru": "Не оставлять детей у реки без присмотра",
+          "en": "Do not leave children unattended by the river",
+          "ab": "Не оставлять детей у реки без присмотра"
+        }
+      ],
+      "cancellation": {
+        "freeUntilDays": 10,
+        "note": {
+          "ru": "Бесплатная отмена за 10 дней до заезда.",
+          "en": "Free cancellation up to 10 days before arrival.",
+          "ab": "Бесплатная отмена за 10 дней до заезда."
+        }
+      },
+      "rating": 4.7,
+      "reviewCount": 19,
+      "units": [
+        {
+          "id": "unit-bzyb-walnut",
+          "name": {
+            "ru": "Ореховый дом",
+            "en": "Walnut House",
+            "ab": "Ореховый дом"
+          },
+          "description": {
+            "ru": "Двухэтажный дом, три спальни, большая веранда над двором.",
+            "en": "A two-storey house, three bedrooms, a large veranda over the yard.",
+            "ab": "Двухэтажный дом, три спальни, большая веранда над двором."
+          },
+          "guests": 6,
+          "bedrooms": 3,
+          "beds": 4,
+          "baths": 2,
+          "sizeSqm": 96,
+          "pricePerNight": {
+            "amount": 7200,
+            "currency": "RUB"
+          },
+          "photos": [
+            {
+              "src": "/photos/bzyb-river.jpg",
+              "alt": {
+                "ru": "Веранда Орехового дома",
+                "en": "Walnut House veranda",
+                "ab": "Веранда Орехового дома"
+              }
+            },
+            {
+              "src": "/photos/boxwood-forest.jpg",
+              "alt": {
+                "ru": "Спальня наверху",
+                "en": "Upstairs bedroom",
+                "ab": "Спальня наверху"
+              }
+            }
+          ],
+          "amenities": [
+            "kitchen",
+            "parking",
+            "wifi",
+            "washer",
+            "terrace",
+            "bbq",
+            "river_access"
+          ]
+        },
+        {
+          "id": "unit-bzyb-willow",
+          "name": {
+            "ru": "Ивовый дом",
+            "en": "Willow House",
+            "ab": "Ивовый дом"
+          },
+          "description": {
+            "ru": "Одноэтажный дом ближе к воде, две спальни, крыльцо в тени ивы.",
+            "en": "A single-storey house nearer the water, two bedrooms, a porch in the shade of a willow.",
+            "ab": "Одноэтажный дом ближе к воде, две спальни, крыльцо в тени ивы."
+          },
+          "guests": 4,
+          "bedrooms": 2,
+          "beds": 2,
+          "baths": 1,
+          "sizeSqm": 58,
+          "pricePerNight": {
+            "amount": 5100,
+            "currency": "RUB"
+          },
+          "photos": [
+            {
+              "src": "/photos/boxwood-forest.jpg",
+              "alt": {
+                "ru": "Крыльцо Ивового дома",
+                "en": "Willow House porch",
+                "ab": "Крыльцо Ивового дома"
+              }
+            }
+          ],
+          "amenities": [
+            "kitchen",
+            "parking",
+            "wifi",
+            "river_access",
+            "garden"
+          ]
+        }
+      ]
+    }
+  ],
+  "sellers": [
+    {
+      "id": "seller-ripa",
+      "slug": "ripa-dairy",
+      "name": {
+        "ru": "Молочная семьи Рипа",
+        "en": "Ripa Family Dairy",
+        "ab": "Молочная семьи Рипа"
+      },
+      "about": {
+        "ru": "Семья Рипа держит коров в Лыхны и делает мацони, сулугуни и масло по-старому, без заквасок из магазина.",
+        "en": "The Ripa family keeps cows in Lykhny and makes matsoni, sulguni and butter the old way, with no shop-bought cultures.",
+        "ab": "Семья Рипа держит коров в Лыхны и делает мацони, сулугуни и масло по-старому, без заквасок из магазина."
+      },
+      "location": {
+        "region": {
+          "ru": "Гудаутский район",
+          "en": "Gudauta district",
+          "ab": "Гудаутский район"
+        },
+        "area": {
+          "ru": "Лыхны",
+          "en": "Lykhny",
+          "ab": "Лыхны"
+        }
+      }
+    },
+    {
+      "id": "seller-apiary",
+      "slug": "gagra-hills-apiary",
+      "name": {
+        "ru": "Пасека на Гагрском хребте",
+        "en": "Gagra Hills Apiary",
+        "ab": "Пасека на Гагрском хребте"
+      },
+      "about": {
+        "ru": "Кочевая пасека: весной — в ущельях на каштане, летом — на субальпийском разнотравье над Гагрой.",
+        "en": "A migratory apiary: chestnut blossom in the gorges in spring, subalpine meadows above Gagra in summer.",
+        "ab": "Кочевая пасека: весной — в ущельях на каштане, летом — на субальпийском разнотравье над Гагрой."
+      },
+      "location": {
+        "region": {
+          "ru": "Гагрский район",
+          "en": "Gagra district",
+          "ab": "Гагрский район"
+        },
+        "area": {
+          "ru": "Гагра",
+          "en": "Gagra",
+          "ab": "Гагра"
+        }
+      }
+    },
+    {
+      "id": "seller-garden",
+      "slug": "tsandripsh-garden",
+      "name": {
+        "ru": "Сад в Цандрипше",
+        "en": "Tsandripsh Garden",
+        "ab": "Сад в Цандрипше"
+      },
+      "about": {
+        "ru": "Приусадебный сад у моря: куры на выгуле, мандарины, фейхоа и грецкий орех.",
+        "en": "A seaside kitchen garden: free-range hens, tangerines, feijoa and walnuts.",
+        "ab": "Приусадебный сад у моря: куры на выгуле, мандарины, фейхоа и грецкий орех."
+      },
+      "location": {
+        "region": {
+          "ru": "Гагрский район",
+          "en": "Gagra district",
+          "ab": "Гагрский район"
+        },
+        "area": {
+          "ru": "Цандрипш",
+          "en": "Tsandripsh",
+          "ab": "Цандрипш"
+        }
+      }
+    }
+  ],
+  "provisions": [
+    {
+      "id": "prov-milk",
+      "slug": "fresh-cow-milk",
+      "sellerId": "seller-ripa",
+      "category": "dairy",
+      "name": {
+        "ru": "Молоко коровье",
+        "en": "Cow's milk",
+        "ab": "Молоко коровье"
+      },
+      "description": {
+        "ru": "Утренняя дойка, непастеризованное. Разливаем в вашу тару или в стеклянную бутылку с возвратом.",
+        "en": "From the morning milking, unpasteurised. Poured into your own container or a returnable glass bottle.",
+        "ab": "Утренняя дойка, непастеризованное. Разливаем в вашу тару или в стеклянную бутылку с возвратом."
+      },
+      "unitLabel": {
+        "ru": "1 литр",
+        "en": "1 litre",
+        "ab": "1 литр"
+      },
+      "price": {
+        "amount": 150,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка к месту проживания по средам и субботам до полудня.",
+        "en": "Delivered to your accommodation Wednesday and Saturday before noon.",
+        "ab": "Доставка к месту проживания по средам и субботам до полудня."
+      }
+    },
+    {
+      "id": "prov-matsoni",
+      "slug": "matsoni-yogurt",
+      "sellerId": "seller-ripa",
+      "category": "dairy",
+      "name": {
+        "ru": "Мацони",
+        "en": "Matsoni",
+        "ab": "Мацони"
+      },
+      "description": {
+        "ru": "Кисломолочный продукт из цельного молока, густой, слегка терпкий. Отлично на завтрак с мёдом.",
+        "en": "A cultured product from whole milk — thick and slightly tart. Excellent for breakfast with honey.",
+        "ab": "Кисломолочный продукт из цельного молока, густой, слегка терпкий. Отлично на завтрак с мёдом."
+      },
+      "unitLabel": {
+        "ru": "Банка 0,5 л",
+        "en": "0.5 L jar",
+        "ab": "Банка 0,5 л"
+      },
+      "price": {
+        "amount": 180,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка по средам и субботам.",
+        "en": "Delivered Wednesday and Saturday.",
+        "ab": "Доставка по средам и субботам."
+      }
+    },
+    {
+      "id": "prov-sulguni",
+      "slug": "sulguni-cheese",
+      "sellerId": "seller-ripa",
+      "category": "dairy",
+      "name": {
+        "ru": "Сулугуни",
+        "en": "Sulguni cheese",
+        "ab": "Сулугуни"
+      },
+      "description": {
+        "ru": "Рассольный сыр, косичка или круг. Молодой — мягкий, выдержанный — плотнее и солонее.",
+        "en": "A brined cheese, braided or in a round. Young it is soft; aged it is firmer and saltier.",
+        "ab": "Рассольный сыр, косичка или круг. Молодой — мягкий, выдержанный — плотнее и солонее."
+      },
+      "unitLabel": {
+        "ru": "около 500 г",
+        "en": "about 500 g",
+        "ab": "около 500 г"
+      },
+      "price": {
+        "amount": 550,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка по средам и субботам.",
+        "en": "Delivered Wednesday and Saturday.",
+        "ab": "Доставка по средам и субботам."
+      }
+    },
+    {
+      "id": "prov-chestnut-honey",
+      "slug": "chestnut-honey",
+      "sellerId": "seller-apiary",
+      "category": "honey",
+      "name": {
+        "ru": "Каштановый мёд",
+        "en": "Chestnut honey",
+        "ab": "Каштановый мёд"
+      },
+      "description": {
+        "ru": "Тёмный, с лёгкой горчинкой, почти не кристаллизуется. Сбор в ущельях Гагрского хребта.",
+        "en": "Dark, faintly bitter, slow to crystallise. Gathered in the gorges of the Gagra range.",
+        "ab": "Тёмный, с лёгкой горчинкой, почти не кристаллизуется. Сбор в ущельях Гагрского хребта."
+      },
+      "unitLabel": {
+        "ru": "Банка 1 кг",
+        "en": "1 kg jar",
+        "ab": "Банка 1 кг"
+      },
+      "price": {
+        "amount": 900,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка в течение двух дней после заказа.",
+        "en": "Delivered within two days of ordering.",
+        "ab": "Доставка в течение двух дней после заказа."
+      }
+    },
+    {
+      "id": "prov-mountain-honey",
+      "slug": "mountain-honey",
+      "sellerId": "seller-apiary",
+      "category": "honey",
+      "name": {
+        "ru": "Горный мёд",
+        "en": "Mountain honey",
+        "ab": "Горный мёд"
+      },
+      "description": {
+        "ru": "Разнотравье с субальпийских лугов, светлый, густой аромат. Кристаллизуется мелко.",
+        "en": "Wildflower honey from the subalpine meadows — light, strongly aromatic, with a fine crystal.",
+        "ab": "Разнотравье с субальпийских лугов, светлый, густой аромат. Кристаллизуется мелко."
+      },
+      "unitLabel": {
+        "ru": "Банка 1 кг",
+        "en": "1 kg jar",
+        "ab": "Банка 1 кг"
+      },
+      "price": {
+        "amount": 850,
+        "currency": "RUB"
+      },
+      "inStock": false,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Новый сбор в конце июля — оставьте заявку.",
+        "en": "New harvest at the end of July — leave a request.",
+        "ab": "Новый сбор в конце июля — оставьте заявку."
+      }
+    },
+    {
+      "id": "prov-eggs",
+      "slug": "free-range-eggs",
+      "sellerId": "seller-garden",
+      "category": "eggs",
+      "name": {
+        "ru": "Яйца домашние",
+        "en": "Free-range eggs",
+        "ab": "Яйца домашние"
+      },
+      "description": {
+        "ru": "Куры гуляют по саду, питаются зеленью и зерном. Желток яркий, скорлупа разного цвета.",
+        "en": "Hens roam the garden on greens and grain. Bright yolks, mixed shell colours.",
+        "ab": "Куры гуляют по саду, питаются зеленью и зерном. Желток яркий, скорлупа разного цвета."
+      },
+      "unitLabel": {
+        "ru": "10 штук",
+        "en": "10 eggs",
+        "ab": "10 штук"
+      },
+      "price": {
+        "amount": 160,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка ежедневно, кроме воскресенья.",
+        "en": "Delivered daily except Sunday.",
+        "ab": "Доставка ежедневно, кроме воскресенья."
+      }
+    },
+    {
+      "id": "prov-tangerines",
+      "slug": "tangerines",
+      "sellerId": "seller-garden",
+      "category": "produce",
+      "name": {
+        "ru": "Мандарины",
+        "en": "Tangerines",
+        "ab": "Мандарины"
+      },
+      "description": {
+        "ru": "Абхазские мандарины прямо с дерева, в сезон с ноября по январь. Тонкая кожура, кисло-сладкие.",
+        "en": "Abkhaz tangerines straight off the tree, in season November to January. Thin-skinned, sweet-sharp.",
+        "ab": "Абхазские мандарины прямо с дерева, в сезон с ноября по январь. Тонкая кожура, кисло-сладкие."
+      },
+      "unitLabel": {
+        "ru": "Ящик 5 кг",
+        "en": "5 kg box",
+        "ab": "Ящик 5 кг"
+      },
+      "price": {
+        "amount": 500,
+        "currency": "RUB"
+      },
+      "inStock": false,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Сезон с ноября. Сейчас можно оставить заявку на осень.",
+        "en": "Season starts in November. You can leave a request for autumn now.",
+        "ab": "Сезон с ноября. Сейчас можно оставить заявку на осень."
+      }
+    },
+    {
+      "id": "prov-feijoa",
+      "slug": "feijoa",
+      "sellerId": "seller-garden",
+      "category": "produce",
+      "name": {
+        "ru": "Фейхоа",
+        "en": "Feijoa",
+        "ab": "Фейхоа"
+      },
+      "description": {
+        "ru": "Осенний урожай, собираем спелыми. Едят ложкой или крутят с сахаром без варки.",
+        "en": "Autumn harvest, picked ripe. Eaten with a spoon, or blended raw with sugar.",
+        "ab": "Осенний урожай, собираем спелыми. Едят ложкой или крутят с сахаром без варки."
+      },
+      "unitLabel": {
+        "ru": "1 кг",
+        "en": "1 kg",
+        "ab": "1 кг"
+      },
+      "price": {
+        "amount": 400,
+        "currency": "RUB"
+      },
+      "inStock": false,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Сезон с октября.",
+        "en": "Season starts in October.",
+        "ab": "Сезон с октября."
+      }
+    },
+    {
+      "id": "prov-walnuts",
+      "slug": "walnuts",
+      "sellerId": "seller-garden",
+      "category": "produce",
+      "name": {
+        "ru": "Грецкие орехи",
+        "en": "Walnuts",
+        "ab": "Грецкие орехи"
+      },
+      "description": {
+        "ru": "Прошлогодний урожай, очищенные ядра или в скорлупе.",
+        "en": "Last year's harvest, shelled halves or still in the shell.",
+        "ab": "Прошлогодний урожай, очищенные ядра или в скорлупе."
+      },
+      "unitLabel": {
+        "ru": "500 г ядер",
+        "en": "500 g of kernels",
+        "ab": "500 г ядер"
+      },
+      "price": {
+        "amount": 450,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка вместе с другими заказами.",
+        "en": "Delivered together with other orders.",
+        "ab": "Доставка вместе с другими заказами."
+      }
+    },
+    {
+      "id": "prov-adjika",
+      "slug": "adjika",
+      "sellerId": "seller-ripa",
+      "category": "preserves",
+      "name": {
+        "ru": "Аджика",
+        "en": "Adjika",
+        "ab": "Аджика"
+      },
+      "description": {
+        "ru": "Острая паста из красного перца, чеснока и трав, растёртая на камне. Домашний рецепт семьи Рипа.",
+        "en": "A hot paste of red pepper, garlic and herbs, ground on a stone. The Ripa family recipe.",
+        "ab": "Острая паста из красного перца, чеснока и трав, растёртая на камне. Домашний рецепт семьи Рипа."
+      },
+      "unitLabel": {
+        "ru": "Банка 250 г",
+        "en": "250 g jar",
+        "ab": "Банка 250 г"
+      },
+      "price": {
+        "amount": 300,
+        "currency": "RUB"
+      },
+      "inStock": true,
+      "photos": [],
+      "deliveryNote": {
+        "ru": "Доставка по средам и субботам.",
+        "en": "Delivered Wednesday and Saturday.",
+        "ab": "Доставка по средам и субботам."
+      }
+    }
+  ],
+  "rentals": [
+    {
+      "id": "rent-rav4",
+      "slug": "toyota-rav4",
+      "category": "car",
+      "name": {
+        "ru": "Toyota RAV4",
+        "en": "Toyota RAV4",
+        "ab": "Toyota RAV4"
+      },
+      "description": {
+        "ru": "Полный привод, дорожный просвет для грунтовки на Рицу и в горные сёла. Автомат, кондиционер.",
+        "en": "All-wheel drive with the clearance for the Ritsa gravel road and the mountain villages. Automatic, air conditioning.",
+        "ab": "Полный привод, дорожный просвет для грунтовки на Рицу и в горные сёла. Автомат, кондиционер."
+      },
+      "pricePerDay": {
+        "amount": 4500,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 15000,
+        "currency": "RUB"
+      },
+      "quantity": 2,
+      "delivery": true,
+      "pickupPoint": {
+        "ru": "Цандрипш, у рынка; либо подвоз к жилью",
+        "en": "Tsandripsh, by the market; or delivery to your stay",
+        "ab": "Цандрипш, у рынка; либо подвоз к жилью"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "Коробка",
+            "en": "Transmission",
+            "ab": "Коробка"
+          },
+          "value": {
+            "ru": "Автомат",
+            "en": "Automatic",
+            "ab": "Автомат"
+          }
+        },
+        {
+          "label": {
+            "ru": "Привод",
+            "en": "Drivetrain",
+            "ab": "Привод"
+          },
+          "value": {
+            "ru": "Полный",
+            "en": "All-wheel",
+            "ab": "Полный"
+          }
+        },
+        {
+          "label": {
+            "ru": "Мест",
+            "en": "Seats",
+            "ab": "Мест"
+          },
+          "value": {
+            "ru": "5",
+            "en": "5",
+            "ab": "5"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "15 000 ₽",
+            "en": "15,000 ₽",
+            "ab": "15 000 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-niva",
+      "slug": "lada-niva",
+      "category": "car",
+      "name": {
+        "ru": "Lada Niva 4x4",
+        "en": "Lada Niva 4x4",
+        "ab": "Lada Niva 4x4"
+      },
+      "description": {
+        "ru": "Простая и проходимая. Механика, без кондиционера, но проедет там, где RAV4 уже жалко.",
+        "en": "Simple and capable. Manual, no air conditioning, but it goes where you would not want to take the RAV4.",
+        "ab": "Простая и проходимая. Механика, без кондиционера, но проедет там, где RAV4 уже жалко."
+      },
+      "pricePerDay": {
+        "amount": 2800,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 8000,
+        "currency": "RUB"
+      },
+      "quantity": 1,
+      "delivery": true,
+      "pickupPoint": {
+        "ru": "Цандрипш, у рынка",
+        "en": "Tsandripsh, by the market",
+        "ab": "Цандрипш, у рынка"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "Коробка",
+            "en": "Transmission",
+            "ab": "Коробка"
+          },
+          "value": {
+            "ru": "Механика",
+            "en": "Manual",
+            "ab": "Механика"
+          }
+        },
+        {
+          "label": {
+            "ru": "Привод",
+            "en": "Drivetrain",
+            "ab": "Привод"
+          },
+          "value": {
+            "ru": "Полный",
+            "en": "All-wheel",
+            "ab": "Полный"
+          }
+        },
+        {
+          "label": {
+            "ru": "Мест",
+            "en": "Seats",
+            "ab": "Мест"
+          },
+          "value": {
+            "ru": "4",
+            "en": "4",
+            "ab": "4"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "8 000 ₽",
+            "en": "8,000 ₽",
+            "ab": "8 000 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-sup",
+      "slug": "sup-board",
+      "category": "water",
+      "name": {
+        "ru": "SUP-доска",
+        "en": "SUP board",
+        "ab": "SUP-доска"
+      },
+      "description": {
+        "ru": "Надувная доска с веслом, насосом и страховочным лишем. Выдаём с сумкой для переноски.",
+        "en": "An inflatable board with paddle, pump and a safety leash. Comes with a carry bag.",
+        "ab": "Надувная доска с веслом, насосом и страховочным лишем. Выдаём с сумкой для переноски."
+      },
+      "pricePerDay": {
+        "amount": 800,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 3000,
+        "currency": "RUB"
+      },
+      "quantity": 6,
+      "delivery": true,
+      "pickupPoint": {
+        "ru": "Пляж Цандрипша или подвоз",
+        "en": "Tsandripsh beach or delivery",
+        "ab": "Пляж Цандрипша или подвоз"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "В комплекте",
+            "en": "Included",
+            "ab": "В комплекте"
+          },
+          "value": {
+            "ru": "Весло, насос, лиш",
+            "en": "Paddle, pump, leash",
+            "ab": "Весло, насос, лиш"
+          }
+        },
+        {
+          "label": {
+            "ru": "Нагрузка",
+            "en": "Max load",
+            "ab": "Нагрузка"
+          },
+          "value": {
+            "ru": "120 кг",
+            "en": "120 kg",
+            "ab": "120 кг"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "3 000 ₽",
+            "en": "3,000 ₽",
+            "ab": "3 000 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-kayak",
+      "slug": "sea-kayak",
+      "category": "water",
+      "name": {
+        "ru": "Каяк двухместный",
+        "en": "Two-seat kayak",
+        "ab": "Каяк двухместный"
+      },
+      "description": {
+        "ru": "Устойчивый каяк для спокойного моря, два весла и два спасжилета.",
+        "en": "A stable kayak for calm sea, two paddles and two life vests.",
+        "ab": "Устойчивый каяк для спокойного моря, два весла и два спасжилета."
+      },
+      "pricePerDay": {
+        "amount": 1200,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 4000,
+        "currency": "RUB"
+      },
+      "quantity": 2,
+      "delivery": false,
+      "pickupPoint": {
+        "ru": "Пляж Цандрипша",
+        "en": "Tsandripsh beach",
+        "ab": "Пляж Цандрипша"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "Мест",
+            "en": "Seats",
+            "ab": "Мест"
+          },
+          "value": {
+            "ru": "2",
+            "en": "2",
+            "ab": "2"
+          }
+        },
+        {
+          "label": {
+            "ru": "В комплекте",
+            "en": "Included",
+            "ab": "В комплекте"
+          },
+          "value": {
+            "ru": "2 весла, 2 жилета",
+            "en": "2 paddles, 2 vests",
+            "ab": "2 весла, 2 жилета"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "4 000 ₽",
+            "en": "4,000 ₽",
+            "ab": "4 000 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-beach-set",
+      "slug": "beach-lounger-set",
+      "category": "beach",
+      "name": {
+        "ru": "Комплект: два лежака и зонт",
+        "en": "Set: two loungers and an umbrella",
+        "ab": "Комплект: два лежака и зонт"
+      },
+      "description": {
+        "ru": "Складные лежаки и зонт с песочным анкером. Привозим утром, забираем вечером.",
+        "en": "Folding loungers and an umbrella with a sand anchor. Dropped off in the morning, collected in the evening.",
+        "ab": "Складные лежаки и зонт с песочным анкером. Привозим утром, забираем вечером."
+      },
+      "pricePerDay": {
+        "amount": 600,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 1000,
+        "currency": "RUB"
+      },
+      "quantity": 10,
+      "delivery": true,
+      "pickupPoint": {
+        "ru": "Доставка на пляж",
+        "en": "Delivered to the beach",
+        "ab": "Доставка на пляж"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "В комплекте",
+            "en": "Included",
+            "ab": "В комплекте"
+          },
+          "value": {
+            "ru": "2 лежака, зонт, анкер",
+            "en": "2 loungers, umbrella, anchor",
+            "ab": "2 лежака, зонт, анкер"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "1 000 ₽",
+            "en": "1,000 ₽",
+            "ab": "1 000 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-beach-table",
+      "slug": "folding-beach-table",
+      "category": "beach",
+      "name": {
+        "ru": "Складной стол",
+        "en": "Folding table",
+        "ab": "Складной стол"
+      },
+      "description": {
+        "ru": "Низкий алюминиевый стол для пикника на пляже или во дворе.",
+        "en": "A low aluminium table for a picnic on the beach or in the yard.",
+        "ab": "Низкий алюминиевый стол для пикника на пляже или во дворе."
+      },
+      "pricePerDay": {
+        "amount": 200,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 500,
+        "currency": "RUB"
+      },
+      "quantity": 8,
+      "delivery": true,
+      "pickupPoint": {
+        "ru": "Доставка",
+        "en": "Delivered",
+        "ab": "Доставка"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "Размер",
+            "en": "Size",
+            "ab": "Размер"
+          },
+          "value": {
+            "ru": "90 × 60 см",
+            "en": "90 × 60 cm",
+            "ab": "90 × 60 см"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "500 ₽",
+            "en": "500 ₽",
+            "ab": "500 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-tent",
+      "slug": "two-person-tent-kit",
+      "category": "camping",
+      "name": {
+        "ru": "Палатка на двоих + коврики",
+        "en": "Two-person tent + mats",
+        "ab": "Палатка на двоих + коврики"
+      },
+      "description": {
+        "ru": "Комплект для ночёвки в горах: палатка, два коврика, два спальника до +5 °C.",
+        "en": "A kit for a night in the mountains: tent, two mats, two sleeping bags rated to +5 °C.",
+        "ab": "Комплект для ночёвки в горах: палатка, два коврика, два спальника до +5 °C."
+      },
+      "pricePerDay": {
+        "amount": 700,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 3000,
+        "currency": "RUB"
+      },
+      "quantity": 3,
+      "delivery": false,
+      "pickupPoint": {
+        "ru": "Цандрипш, у рынка",
+        "en": "Tsandripsh, by the market",
+        "ab": "Цандрипш, у рынка"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "Вместимость",
+            "en": "Capacity",
+            "ab": "Вместимость"
+          },
+          "value": {
+            "ru": "2 человека",
+            "en": "2 people",
+            "ab": "2 человека"
+          }
+        },
+        {
+          "label": {
+            "ru": "В комплекте",
+            "en": "Included",
+            "ab": "В комплекте"
+          },
+          "value": {
+            "ru": "2 коврика, 2 спальника",
+            "en": "2 mats, 2 bags",
+            "ab": "2 коврика, 2 спальника"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "3 000 ₽",
+            "en": "3,000 ₽",
+            "ab": "3 000 ₽"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rent-ebike",
+      "slug": "e-bike",
+      "category": "bike",
+      "name": {
+        "ru": "Электровелосипед",
+        "en": "E-bike",
+        "ab": "Электровелосипед"
+      },
+      "description": {
+        "ru": "Помогает на подъёмах прибрежной дороги. Запас хода около 60 км, замок и шлем в комплекте.",
+        "en": "Takes the sting out of the coast-road climbs. Around 60 km of range, lock and helmet included.",
+        "ab": "Помогает на подъёмах прибрежной дороги. Запас хода около 60 км, замок и шлем в комплекте."
+      },
+      "pricePerDay": {
+        "amount": 1500,
+        "currency": "RUB"
+      },
+      "deposit": {
+        "amount": 6000,
+        "currency": "RUB"
+      },
+      "quantity": 4,
+      "delivery": true,
+      "pickupPoint": {
+        "ru": "Цандрипш или подвоз к жилью",
+        "en": "Tsandripsh or delivery to your stay",
+        "ab": "Цандрипш или подвоз к жилью"
+      },
+      "photos": [],
+      "specs": [
+        {
+          "label": {
+            "ru": "Запас хода",
+            "en": "Range",
+            "ab": "Запас хода"
+          },
+          "value": {
+            "ru": "~60 км",
+            "en": "~60 km",
+            "ab": "~60 км"
+          }
+        },
+        {
+          "label": {
+            "ru": "В комплекте",
+            "en": "Included",
+            "ab": "В комплекте"
+          },
+          "value": {
+            "ru": "Замок, шлем",
+            "en": "Lock, helmet",
+            "ab": "Замок, шлем"
+          }
+        },
+        {
+          "label": {
+            "ru": "Залог",
+            "en": "Deposit",
+            "ab": "Залог"
+          },
+          "value": {
+            "ru": "6 000 ₽",
+            "en": "6,000 ₽",
+            "ab": "6 000 ₽"
+          }
+        }
+      ]
+    }
+  ],
+  "excursions": [
+    {
+      "id": "exc-ritsa",
+      "slug": "ritsa-gega-blue-lake",
+      "name": {
+        "ru": "Озеро Рица, Гегский водопад и Голубое озеро",
+        "en": "Lake Ritsa, Gega Waterfall and the Blue Lake",
+        "ab": "Озеро Рица, Гегский водопад и Голубое озеро"
+      },
+      "summary": {
+        "ru": "Целый день в Рицинском парке: серпантин вдоль Бзыби, водопады и озеро на высоте 950 м.",
+        "en": "A full day in the Ritsa park: the Bzyb canyon road, waterfalls and a lake at 950 m.",
+        "ab": "Целый день в Рицинском парке: серпантин вдоль Бзыби, водопады и озеро на высоте 950 м."
+      },
+      "description": {
+        "ru": "Выезжаем рано, чтобы попасть к Рице до автобусов. По дороге — Голубое озеро, Юпшарский каньон и «Каменный мешок», сворот к Гегскому водопаду по грунтовке (нужна полноприводная машина). На Рице — час на прогулку и обед у воды. Обратно заезжаем на дачу Сталина, если остаётся время.",
+        "en": "We leave early to reach Ritsa before the coaches. On the way: the Blue Lake, the Yupshara canyon and its narrows, and the gravel turn-off to the Gega waterfall (a 4x4 is needed). At Ritsa there is an hour to walk and lunch by the water. On the way back we stop at Stalin's dacha if time allows.",
+        "ab": "Выезжаем рано, чтобы попасть к Рице до автобусов. По дороге — Голубое озеро, Юпшарский каньон и «Каменный мешок», сворот к Гегскому водопаду по грунтовке (нужна полноприводная машина). На Рице — час на прогулку и обед у воды. Обратно заезжаем на дачу Сталина, если остаётся время."
+      },
+      "durationHours": 9,
+      "pricePerPerson": {
+        "amount": 3500,
+        "currency": "RUB"
+      },
+      "groupMax": 6,
+      "schedule": {
+        "ru": "Ежедневно, выезд в 8:00",
+        "en": "Daily, departure at 08:00",
+        "ab": "Ежедневно, выезд в 8:00"
+      },
+      "meetingPoint": {
+        "ru": "От вашего жилья в Гагрском районе",
+        "en": "Pick-up from your stay in the Gagra district",
+        "ab": "От вашего жилья в Гагрском районе"
+      },
+      "photos": [
+        {
+          "src": "/photos/ritsa-lake.jpg",
+          "alt": {
+            "ru": "Озеро Рица",
+            "en": "Lake Ritsa",
+            "ab": "Озеро Рица"
+          }
+        },
+        {
+          "src": "/photos/ritsa-shore.jpg",
+          "alt": {
+            "ru": "Гегский водопад",
+            "en": "The Gega waterfall",
+            "ab": "Гегский водопад"
+          }
+        },
+        {
+          "src": "/photos/bzyb-river.jpg",
+          "alt": {
+            "ru": "Юпшарский каньон",
+            "en": "The Yupshara canyon",
+            "ab": "Юпшарский каньон"
+          }
+        }
+      ],
+      "includes": [
+        {
+          "ru": "Трансфер на полноприводной машине",
+          "en": "Transfer in a 4x4",
+          "ab": "Трансфер на полноприводной машине"
+        },
+        {
+          "ru": "Экологический сбор парка",
+          "en": "Park entry fee",
+          "ab": "Экологический сбор парка"
+        },
+        {
+          "ru": "Сопровождение водителя-гида",
+          "en": "A driver-guide with you",
+          "ab": "Сопровождение водителя-гида"
+        }
+      ],
+      "highlights": [
+        {
+          "ru": "Гегский водопад — съёмки «Шерлока Холмса»",
+          "en": "The Gega waterfall — a Sherlock Holmes filming location",
+          "ab": "Гегский водопад — съёмки «Шерлока Холмса»"
+        },
+        {
+          "ru": "Обед у воды на Рице",
+          "en": "Lunch by the water at Ritsa",
+          "ab": "Обед у воды на Рице"
+        },
+        {
+          "ru": "Меньше людей за счёт раннего выезда",
+          "en": "Fewer people thanks to the early start",
+          "ab": "Меньше людей за счёт раннего выезда"
+        }
+      ]
+    },
+    {
+      "id": "exc-new-athos",
+      "slug": "new-athos",
+      "name": {
+        "ru": "Новый Афон: монастырь, пещера и крепость",
+        "en": "New Athos: monastery, cave and fortress",
+        "ab": "Новый Афон: монастырь, пещера и крепость"
+      },
+      "summary": {
+        "ru": "Полдня в Новом Афоне: Симоно-Кананитский монастырь, пещера и подъём к Анакопийской крепости.",
+        "en": "Half a day in New Athos: the monastery, the cave and the climb to the Anakopia fortress.",
+        "ab": "Полдня в Новом Афоне: Симоно-Кананитский монастырь, пещера и подъём к Анакопийской крепости."
+      },
+      "description": {
+        "ru": "Начинаем с монастыря и рукотворного водопада, спускаемся к пещере (входим по расписанию, внутри прохладно — возьмите кофту). После обеда — подъём к Анакопийской крепости за видом на всё побережье. Приморский парк с лебедями — по желанию в конце.",
+        "en": "We start at the monastery and the man-made waterfall, then go down to the cave (timed entry, it is cold inside — bring a layer). After lunch, the climb to the Anakopia fortress for the view along the whole coast. The seaside park with its swans is optional at the end.",
+        "ab": "Начинаем с монастыря и рукотворного водопада, спускаемся к пещере (входим по расписанию, внутри прохладно — возьмите кофту). После обеда — подъём к Анакопийской крепости за видом на всё побережье. Приморский парк с лебедями — по желанию в конце."
+      },
+      "durationHours": 5,
+      "pricePerPerson": {
+        "amount": 2200,
+        "currency": "RUB"
+      },
+      "groupMax": 8,
+      "schedule": {
+        "ru": "Вторник, четверг, суббота, выезд в 9:00",
+        "en": "Tuesday, Thursday, Saturday, departure at 09:00",
+        "ab": "Вторник, четверг, суббота, выезд в 9:00"
+      },
+      "meetingPoint": {
+        "ru": "От вашего жилья",
+        "en": "Pick-up from your stay",
+        "ab": "От вашего жилья"
+      },
+      "photos": [
+        {
+          "src": "/photos/athos-monastery.jpg",
+          "alt": {
+            "ru": "Новоафонский монастырь",
+            "en": "The New Athos monastery",
+            "ab": "Новоафонский монастырь"
+          }
+        },
+        {
+          "src": "/photos/athos-cave.jpg",
+          "alt": {
+            "ru": "Новоафонская пещера",
+            "en": "The New Athos cave",
+            "ab": "Новоафонская пещера"
+          }
+        },
+        {
+          "src": "/photos/anacopia.jpg",
+          "alt": {
+            "ru": "Анакопийская крепость",
+            "en": "The Anakopia fortress",
+            "ab": "Анакопийская крепость"
+          }
+        }
+      ],
+      "includes": [
+        {
+          "ru": "Трансфер",
+          "en": "Transfer",
+          "ab": "Трансфер"
+        },
+        {
+          "ru": "Билет в пещеру",
+          "en": "Cave ticket",
+          "ab": "Билет в пещеру"
+        },
+        {
+          "ru": "Сопровождение гида",
+          "en": "A guide with you",
+          "ab": "Сопровождение гида"
+        }
+      ],
+      "highlights": [
+        {
+          "ru": "Поезд по пещере",
+          "en": "The little train through the cave",
+          "ab": "Поезд по пещере"
+        },
+        {
+          "ru": "Вид с башни крепости",
+          "en": "The view from the fortress tower",
+          "ab": "Вид с башни крепости"
+        }
+      ]
+    },
+    {
+      "id": "exc-gagra",
+      "slug": "old-gagra",
+      "name": {
+        "ru": "Старая Гагра пешком",
+        "en": "Old Gagra on foot",
+        "ab": "Старая Гагра пешком"
+      },
+      "summary": {
+        "ru": "Неспешная прогулка по Старой Гагре: колоннада, ресторан «Гагрипш», парк принца Ольденбургского и ущелье Жоэквара.",
+        "en": "An unhurried walk through Old Gagra: the colonnade, the Gagripsh restaurant, Prince Oldenburg's park and the Zhoekvara gorge.",
+        "ab": "Неспешная прогулка по Старой Гагре: колоннада, ресторан «Гагрипш», парк принца Ольденбургского и ущелье Жоэквара."
+      },
+      "description": {
+        "ru": "Три часа пешком с рассказом о том, как Гагра стала курортом при принце Ольденбургском. Проходим колоннаду, приморский парк с субтропиками, поднимаемся к замку и заканчиваем у входа в ущелье Жоэквара. Кофе в «Гагрипше» — по желанию.",
+        "en": "Three hours on foot with the story of how Gagra became a resort under Prince Oldenburg. We walk the colonnade and the subtropical seaside park, climb to the castle and finish at the mouth of the Zhoekvara gorge. Coffee at the Gagripsh is optional.",
+        "ab": "Три часа пешком с рассказом о том, как Гагра стала курортом при принце Ольденбургском. Проходим колоннаду, приморский парк с субтропиками, поднимаемся к замку и заканчиваем у входа в ущелье Жоэквара. Кофе в «Гагрипше» — по желанию."
+      },
+      "durationHours": 3,
+      "pricePerPerson": {
+        "amount": 1500,
+        "currency": "RUB"
+      },
+      "groupMax": 10,
+      "schedule": {
+        "ru": "Понедельник и пятница, 10:00",
+        "en": "Monday and Friday, 10:00",
+        "ab": "Понедельник и пятница, 10:00"
+      },
+      "meetingPoint": {
+        "ru": "У колоннады в Гагре",
+        "en": "At the colonnade in Gagra",
+        "ab": "У колоннады в Гагре"
+      },
+      "photos": [
+        {
+          "src": "/photos/gagra-colonnade.jpg",
+          "alt": {
+            "ru": "Гагрская колоннада",
+            "en": "The Gagra colonnade",
+            "ab": "Гагрская колоннада"
+          }
+        },
+        {
+          "src": "/photos/gagripsh.jpg",
+          "alt": {
+            "ru": "Ресторан «Гагрипш»",
+            "en": "The Gagripsh restaurant",
+            "ab": "Ресторан «Гагрипш»"
+          }
+        },
+        {
+          "src": "/photos/gagra-beach.jpg",
+          "alt": {
+            "ru": "Приморский парк",
+            "en": "The seaside park",
+            "ab": "Приморский парк"
+          }
+        }
+      ],
+      "includes": [
+        {
+          "ru": "Пешеходная экскурсия с гидом",
+          "en": "A guided walking tour",
+          "ab": "Пешеходная экскурсия с гидом"
+        }
+      ],
+      "highlights": [
+        {
+          "ru": "История Приморского парка",
+          "en": "The history of the seaside park",
+          "ab": "История Приморского парка"
+        },
+        {
+          "ru": "Панорама с замка принца Ольденбургского",
+          "en": "The panorama from Prince Oldenburg's castle",
+          "ab": "Панорама с замка принца Ольденбургского"
+        }
+      ]
+    },
+    {
+      "id": "exc-bzyb-raft",
+      "slug": "bzyb-rafting",
+      "name": {
+        "ru": "Сплав по Бзыби",
+        "en": "Rafting the Bzyb",
+        "ab": "Сплав по Бзыби"
+      },
+      "summary": {
+        "ru": "Полдня на воде: сплав по нижнему участку Бзыби, подходит для новичков с 12 лет.",
+        "en": "Half a day on the water: the lower Bzyb, suitable for beginners aged 12 and up.",
+        "ab": "Полдня на воде: сплав по нижнему участку Бзыби, подходит для новичков с 12 лет."
+      },
+      "description": {
+        "ru": "Инструктаж на берегу, снаряжение выдаём. Маршрут по нижнему течению без сложных порогов, с остановкой на песчаной косе. Сухую одежду и полотенце берите с собой, всё остальное — наше.",
+        "en": "A briefing on the bank, gear provided. The route follows the lower river with no serious rapids and a stop on a sand spit. Bring dry clothes and a towel; everything else is ours.",
+        "ab": "Инструктаж на берегу, снаряжение выдаём. Маршрут по нижнему течению без сложных порогов, с остановкой на песчаной косе. Сухую одежду и полотенце берите с собой, всё остальное — наше."
+      },
+      "durationHours": 4,
+      "pricePerPerson": {
+        "amount": 2600,
+        "currency": "RUB"
+      },
+      "groupMax": 8,
+      "schedule": {
+        "ru": "Среда и воскресенье, 10:00 (май–сентябрь)",
+        "en": "Wednesday and Sunday, 10:00 (May–September)",
+        "ab": "Среда и воскресенье, 10:00 (май–сентябрь)"
+      },
+      "meetingPoint": {
+        "ru": "Мост через Бзыбь",
+        "en": "The bridge over the Bzyb",
+        "ab": "Мост через Бзыбь"
+      },
+      "photos": [
+        {
+          "src": "/photos/bzyb-river.jpg",
+          "alt": {
+            "ru": "Сплав по реке Бзыбь",
+            "en": "Rafting on the Bzyb",
+            "ab": "Сплав по реке Бзыбь"
+          }
+        },
+        {
+          "src": "/photos/boxwood-forest.jpg",
+          "alt": {
+            "ru": "Остановка на косе",
+            "en": "A stop on the sand spit",
+            "ab": "Остановка на косе"
+          }
+        }
+      ],
+      "includes": [
+        {
+          "ru": "Снаряжение и гидрокостюм",
+          "en": "Gear and a wetsuit",
+          "ab": "Снаряжение и гидрокостюм"
+        },
+        {
+          "ru": "Инструктор на рафте",
+          "en": "An instructor on the raft",
+          "ab": "Инструктор на рафте"
+        },
+        {
+          "ru": "Страховка",
+          "en": "Insurance",
+          "ab": "Страховка"
+        }
+      ],
+      "highlights": [
+        {
+          "ru": "Подходит для первого раза",
+          "en": "Good for a first time",
+          "ab": "Подходит для первого раза"
+        },
+        {
+          "ru": "Купание на песчаной косе",
+          "en": "A swim at the sand spit",
+          "ab": "Купание на песчаной косе"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-01",
+      "subjectSlug": "ahmad-farm",
+      "author": "Ирина",
+      "date": "2026-08-14",
+      "rating": 5,
+      "booked": {
+        "ru": "Кедровый дом",
+        "en": "Cedar House",
+        "ab": "Кедровый дом"
+      },
+      "text": {
+        "ru": "Дом больше, чем на фотографиях. Терраса — лучшее место в доме, завтракали там каждое утро. До пляжа действительно минут пятнадцать, дорога вниз через сад. Ахмад оставлял инжир и виноград у двери, мы даже не сразу поняли, что это нам.",
+        "en": "The house is bigger than the photos suggest. The terrace is the best part of it — we had breakfast there every morning. It really is about fifteen minutes to the beach, downhill through the orchard. Ahmad left figs and grapes by the door; it took us a day to work out they were for us.",
+        "ab": "Дом больше, чем на фотографиях. Терраса — лучшее место в доме, завтракали там каждое утро. До пляжа действительно минут пятнадцать, дорога вниз через сад. Ахмад оставлял инжир и виноград у двери, мы даже не сразу поняли, что это нам."
+      },
+      "reply": {
+        "ru": "Спасибо, Ирина. Инжир в этом году удался — приезжайте в сентябре, будет ещё больше.",
+        "en": "Thank you, Irina. The figs did well this year — come in September and there will be more.",
+        "ab": "Спасибо, Ирина. Инжир в этом году удался — приезжайте в сентябре, будет ещё больше."
+      }
+    },
+    {
+      "id": "rev-02",
+      "subjectSlug": "ahmad-farm",
+      "author": "Дмитрий и Катя",
+      "date": "2026-07-29",
+      "rating": 5,
+      "booked": {
+        "ru": "Мандариновый дом",
+        "en": "Tangerine House",
+        "ab": "Мандариновый дом"
+      },
+      "text": {
+        "ru": "Брали на двоих, места хватило с запасом. Тихо, слышно только цикад. Единственное — дорога к дому грунтовая, на низкой машине аккуратнее.",
+        "en": "We took it for two and had space to spare. Quiet — you only hear cicadas. One thing: the track up to the house is unpaved, so take care in a low car.",
+        "ab": "Брали на двоих, места хватило с запасом. Тихо, слышно только цикад. Единственное — дорога к дому грунтовая, на низкой машине аккуратнее."
+      }
+    },
+    {
+      "id": "rev-03",
+      "subjectSlug": "ahmad-farm",
+      "author": "Sofia",
+      "date": "2026-06-11",
+      "rating": 4,
+      "booked": {
+        "ru": "Речной дом",
+        "en": "River House",
+        "ab": "Речной дом"
+      },
+      "text": {
+        "ru": "Маленький, но всё продумано. Кондиционера нет, в июне это было нормально, в августе, наверное, было бы жарко.",
+        "en": "Small, but everything is thought through. No air conditioning — fine in June, though I imagine August would be hot.",
+        "ab": "Маленький, но всё продумано. Кондиционера нет, в июне это было нормально, в августе, наверное, было бы жарко."
+      }
+    },
+    {
+      "id": "rev-04",
+      "subjectSlug": "moaz-farm",
+      "author": "Елена",
+      "date": "2026-08-02",
+      "rating": 5,
+      "booked": {
+        "ru": "Мансарда",
+        "en": "Attic Room",
+        "ab": "Мансарда"
+      },
+      "text": {
+        "ru": "Завтраки у Наалы — отдельная причина сюда ехать. Мацони, мёд, яйца, всё своё. Астан отвёл нас к морю через лес и показал бухту, где мы были одни.",
+        "en": "Naala's breakfasts are a reason to come here on their own. Matsoni, honey, eggs, all their own. Astan walked us to the sea through the forest and showed us a cove where we had the water to ourselves.",
+        "ab": "Завтраки у Наалы — отдельная причина сюда ехать. Мацони, мёд, яйца, всё своё. Астан отвёл нас к морю через лес и показал бухту, где мы были одни."
+      },
+      "reply": {
+        "ru": "Спасибо! Бухта работает, пока про неё не написали в интернете.",
+        "en": "Thank you! That cove works right up until someone writes about it on the internet.",
+        "ab": "Спасибо! Бухта работает, пока про неё не написали в интернете."
+      }
+    },
+    {
+      "id": "rev-05",
+      "subjectSlug": "moaz-farm",
+      "author": "Martin",
+      "date": "2026-07-18",
+      "rating": 5,
+      "booked": {
+        "ru": "Садовая комната",
+        "en": "Garden Room",
+        "ab": "Садовая комната"
+      },
+      "text": {
+        "ru": "Отдельный вход из сада — то, что нужно, когда возвращаешься поздно. Цена за человека честная, ничего не добавили при отъезде.",
+        "en": "The separate garden entrance is exactly what you want when you come back late. The per-person price is honest — nothing was added at checkout.",
+        "ab": "Отдельный вход из сада — то, что нужно, когда возвращаешься поздно. Цена за человека честная, ничего не добавили при отъезде."
+      }
+    },
+    {
+      "id": "rev-06",
+      "subjectSlug": "moaz-farm",
+      "author": "Ольга",
+      "date": "2026-06-24",
+      "rating": 4,
+      "booked": {
+        "ru": "Комната во флигеле",
+        "en": "Annexe Room",
+        "ab": "Комната во флигеле"
+      },
+      "text": {
+        "ru": "Санузел общий с соседней комнатой — нам не мешало, но стоит знать заранее. Всё остальное отлично.",
+        "en": "The bathroom is shared with the next room — it did not bother us, but it is worth knowing in advance. Everything else was excellent.",
+        "ab": "Санузел общий с соседней комнатой — нам не мешало, но стоит знать заранее. Всё остальное отлично."
+      }
+    },
+    {
+      "id": "rev-07",
+      "subjectSlug": "bzyb-orchard",
+      "author": "Георгий",
+      "date": "2026-08-20",
+      "rating": 5,
+      "booked": {
+        "ru": "Ореховый дом",
+        "en": "Walnut House",
+        "ab": "Ореховый дом"
+      },
+      "text": {
+        "ru": "Приехали компанией шесть человек, взяли оба дома. Двор общий, вечером жарили мясо у реки. Шум воды всю ночь — спится прекрасно.",
+        "en": "Six of us came and took both houses. The yard is shared; in the evening we cooked by the river. The sound of the water all night makes for very good sleep.",
+        "ab": "Приехали компанией шесть человек, взяли оба дома. Двор общий, вечером жарили мясо у реки. Шум воды всю ночь — спится прекрасно."
+      }
+    },
+    {
+      "id": "rev-08",
+      "subjectSlug": "ritsa-gega-blue-lake",
+      "author": "Анна",
+      "date": "2026-08-09",
+      "rating": 5,
+      "text": {
+        "ru": "Ранний выезд себя оправдал: на Рице были почти одни, автобусы приехали, когда мы уже уезжали. Гегский водопад — по грунтовке, трясёт, но оно того стоит.",
+        "en": "The early start paid off: we had Ritsa almost to ourselves and the coaches arrived as we were leaving. The Gega waterfall is down a rough track — bumpy, but worth it.",
+        "ab": "Ранний выезд себя оправдал: на Рице были почти одни, автобусы приехали, когда мы уже уезжали. Гегский водопад — по грунтовке, трясёт, но оно того стоит."
+      }
+    },
+    {
+      "id": "rev-09",
+      "subjectSlug": "ritsa-gega-blue-lake",
+      "author": "Павел",
+      "date": "2026-07-31",
+      "rating": 4,
+      "text": {
+        "ru": "День длинный, с маленькими детьми было бы тяжело. Водитель отличный, рассказывал всю дорогу.",
+        "en": "It is a long day; it would be hard with small children. The driver was excellent and talked the whole way.",
+        "ab": "День длинный, с маленькими детьми было бы тяжело. Водитель отличный, рассказывал всю дорогу."
+      }
+    },
+    {
+      "id": "rev-10",
+      "subjectSlug": "new-athos",
+      "author": "Марина",
+      "date": "2026-08-05",
+      "rating": 5,
+      "text": {
+        "ru": "В пещере действительно холодно, кофту берите. Подъём к крепости несложный, вид на всё побережье.",
+        "en": "It really is cold in the cave — bring a layer. The climb to the fortress is easy and the view runs along the whole coast.",
+        "ab": "В пещере действительно холодно, кофту берите. Подъём к крепости несложный, вид на всё побережье."
+      }
+    },
+    {
+      "id": "rev-11",
+      "subjectSlug": "old-gagra",
+      "author": "Nino",
+      "date": "2026-07-12",
+      "rating": 5,
+      "text": {
+        "ru": "Три часа пролетели. Про принца Ольденбургского рассказывали так, что теперь хочу прочитать про него книгу.",
+        "en": "Three hours flew by. The story of Prince Oldenburg was told so well that I now want to read a book about him.",
+        "ab": "Три часа пролетели. Про принца Ольденбургского рассказывали так, что теперь хочу прочитать про него книгу."
+      }
+    },
+    {
+      "id": "rev-12",
+      "subjectSlug": "bzyb-rafting",
+      "author": "Сергей",
+      "date": "2026-08-17",
+      "rating": 5,
+      "text": {
+        "ru": "Первый раз на рафте, было совсем не страшно. Остановка на косе с купанием — лучшая часть.",
+        "en": "First time on a raft and it was not frightening at all. The stop at the sand spit for a swim was the best part.",
+        "ab": "Первый раз на рафте, было совсем не страшно. Остановка на косе с купанием — лучшая часть."
+      }
+    }
+  ],
+  "bookingRequests": []
+}

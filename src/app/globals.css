@@ -1,26 +1,280 @@
 @import "tailwindcss";
 
+/*
+  Casa Colina — design tokens.
+
+  The palette is pulled from the actual photography: Black Sea teal, the clay
+  of the Gagra roofs, cream limestone, subtropical sage. Terracotta stays the
+  action colour; a warm near-black carries the cinematic sections.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf4e8;
+  --foreground: #1d130e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* fonts (loaded via next/font in the locale layout) */
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+  --font-mono: var(--font-label), ui-monospace, "SFMono-Regular", monospace;
+
+  /* clay — the action colour */
+  --color-clay-50: #fbf1ea;
+  --color-clay-100: #f5dccd;
+  --color-clay-200: #ecbb9e;
+  --color-clay-300: #e0966d;
+  --color-clay-400: #d47445;
+  --color-clay-500: #c2562c;
+  --color-clay-600: #a54420;
+  --color-clay-700: #85351a;
+  --color-clay-800: #632818;
+  --color-clay-900: #451d13;
+
+  /* sea — the Black Sea teal, second accent */
+  --color-sea-50: #eef6f5;
+  --color-sea-100: #cfe6e4;
+  --color-sea-200: #9fcbc8;
+  --color-sea-300: #6aaba8;
+  --color-sea-400: #3d8a89;
+  --color-sea-500: #1e6a72;
+  --color-sea-600: #17545e;
+  --color-sea-700: #14434c;
+  --color-sea-800: #12343b;
+
+  /* surfaces */
+  --color-cream: #faf4e8;
+  --color-cream-dim: #f2e7d3;
+  --color-paper: #fffdf8;
+  --color-night: #17100c;
+  --color-night-soft: #241813;
+
+  /* accents */
+  --color-sand: #e4c893;
+  --color-sage: #afbfa6;
+  --color-blush: #e8c4b3;
+
+  /* ink — faint was #94806f (3.4:1 on cream, fails AA); #7a6553 clears 4.5:1 */
+  --color-ink: #1d130e;
+  --color-ink-soft: #5f4a3c;
+  --color-ink-faint: #7a6553;
+
+  --radius-card: 16px;
+
+  /* motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    /* the site header is fixed (h-16 / h-20); keep anchor jumps clear of it */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-clay-500);
+    color: var(--color-cream);
+  }
+
+  .label-caps {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    font-weight: 500;
+    /* explicit line box — uppercase + wide tracking clips against a tight
+       leading in some renderers, which cut the tops off these labels */
+    line-height: 1.5;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* warm ground for non-photographic sections */
+  .clay-ground {
+    background: radial-gradient(
+      120% 130% at 12% 0%,
+      #cf6b3a 0%,
+      #b04a25 48%,
+      #7d3018 100%
+    );
+  }
+
+  .night-ground {
+    background:
+      radial-gradient(80% 90% at 80% 0%, #2c1c14 0%, transparent 60%),
+      #17100c;
+  }
+
+  /*
+    Legibility scrim over the hero. Two passes: one weighted to the left
+    (where the headline sits on wide screens) and one to the bottom (where it
+    sits on phones), plus a little at the top so the header stays readable
+    against a bright sky.
+  */
+  .scrim-bottom {
+    background:
+      linear-gradient(
+        to right,
+        rgba(12, 8, 5, 0.8) 0%,
+        rgba(12, 8, 5, 0.52) 40%,
+        rgba(12, 8, 5, 0.06) 78%
+      ),
+      linear-gradient(
+        to top,
+        rgba(12, 8, 5, 0.85) 0%,
+        rgba(12, 8, 5, 0.45) 28%,
+        rgba(12, 8, 5, 0.16) 58%,
+        rgba(12, 8, 5, 0.5) 100%
+      );
+  }
+
+  .scrim-card {
+    background: linear-gradient(
+      to top,
+      rgba(14, 9, 6, 0.9) 0%,
+      rgba(14, 9, 6, 0.45) 45%,
+      rgba(14, 9, 6, 0.05) 100%
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* motion                                                              */
+/* ------------------------------------------------------------------ */
+
+/*
+  Scroll reveal.
+
+  Visible is the DEFAULT state. Content must survive no-JS, SSR, a frozen
+  animation clock, a throttled background tab and a browser that never fires
+  IntersectionObserver — in every one of those cases the element just shows.
+
+  <Reveal> adds `.reveal-armed` only once JS has mounted AND confirmed the
+  element starts below the fold, i.e. only when the animation can actually be
+  seen to happen. It then adds `.is-visible` to play it. If anything goes
+  wrong between those two steps, the element is still on screen.
+*/
+.reveal-armed {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s var(--ease-out-soft),
+    transform 0.7s var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-armed.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-armed,
+  .reveal-armed.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/*
+  Hero drift.
+
+  This runs on EVERY frame all the time, and alternates rather than restarting.
+  Toggling it per-slide made the outgoing frame snap back to its start transform
+  mid cross-fade — a visible jump right before the image changed. Only opacity
+  changes when the slide advances now, so there is nothing left to snap.
+*/
+@keyframes ken-burns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.14) translate3d(-1.4%, -1.2%, 0);
+  }
+}
+/* No `will-change` here on purpose: promoting three full-viewport images to
+   their own composited layers costs more than the animation saves. */
+.ken-burns {
+  animation: ken-burns 26s ease-in-out infinite alternate;
+}
+
+/* Hero.tsx sets this once the hero scrolls out of view. An infinite
+   full-viewport transform that keeps running behind the rest of the page is
+   pure battery drain, and it stops the page ever reaching an idle frame. */
+.hero-paused .ken-burns {
+  animation-play-state: paused;
+}
+
+/* hero headline: word-by-word entrance */
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-word {
+  display: inline-block;
+  animation: word-in 0.9s var(--ease-out-soft) both;
+  animation-delay: var(--word-delay, 0ms);
+}
+
+@keyframes float-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+.float-hint {
+  animation: float-hint 2.4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+/* honour the OS setting — no exceptions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .ken-burns {
+    animation: none;
+    transform: scale(1.04);
+  }
 }
