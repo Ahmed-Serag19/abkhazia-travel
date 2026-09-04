@@ -36,11 +36,23 @@ export interface ContentDoc {
   bookingRequests: BookingRequest[];
 }
 
+/**
+ * Deliberately a plain `path.join` of string literals, and deliberately NOT
+ * configurable by env var.
+ *
+ * The bundler statically analyses filesystem calls to decide what to ship with
+ * the serverless functions. A path it cannot resolve — anything reached through
+ * `process.env` — makes it give up and trace the *entire project*, which drags
+ * all 16 MB of `public/` into every function bundle and eventually trips
+ * Vercel's size limit. Keeping this literal scopes the trace to `data/`.
+ *
+ * The owner console still needs to point at this file from its own directory;
+ * it has its own `CONTENT_FILE` override, and it is never deployed.
+ */
+const CONTENT_PATH = path.join(process.cwd(), "data", "content.json");
+
 export function contentFilePath(): string {
-  return (
-    process.env.CONTENT_FILE ??
-    path.join(process.cwd(), "data", "content.json")
-  );
+  return CONTENT_PATH;
 }
 
 export const EMPTY_CONTENT: ContentDoc = {
@@ -67,11 +79,9 @@ let cache: { mtimeMs: number; doc: ContentDoc } | null = null;
  * busy page doesn't re-parse the JSON for every component.
  */
 export async function readContent(): Promise<ContentDoc> {
-  const file = contentFilePath();
-
   let mtimeMs: number;
   try {
-    mtimeMs = (await fs.stat(file)).mtimeMs;
+    mtimeMs = (await fs.stat(CONTENT_PATH)).mtimeMs;
   } catch {
     // no file yet — the seed route hasn't been run
     return EMPTY_CONTENT;
@@ -81,7 +91,7 @@ export async function readContent(): Promise<ContentDoc> {
   if (volatile.doc) return volatile.doc;
   if (cache && cache.mtimeMs === mtimeMs) return cache.doc;
 
-  const raw = await fs.readFile(file, "utf8");
+  const raw = await fs.readFile(CONTENT_PATH, "utf8");
   const doc = JSON.parse(raw) as ContentDoc;
   cache = { mtimeMs, doc };
   return doc;
@@ -116,12 +126,11 @@ export async function writeContent(doc: ContentDoc): Promise<boolean> {
     return false;
   }
 
-  const file = contentFilePath();
-  await fs.mkdir(path.dirname(file), { recursive: true });
+  await fs.mkdir(path.join(process.cwd(), "data"), { recursive: true });
 
-  const tmp = `${file}.${process.pid}.tmp`;
+  const tmp = `${CONTENT_PATH}.${process.pid}.tmp`;
   await fs.writeFile(tmp, JSON.stringify(next, null, 2), "utf8");
-  await fs.rename(tmp, file);
+  await fs.rename(tmp, CONTENT_PATH);
 
   cache = null;
   return true;

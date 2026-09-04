@@ -39,7 +39,26 @@ const label = JetBrains_Mono({
   display: "swap",
 });
 
+/**
+ * Where relative image paths in metadata resolve from.
+ *
+ * Property pages set `openGraph.images` to `/photos/…`. Without a base those
+ * resolve against localhost, so every link shared from the deployed site would
+ * preview a broken image. Vercel injects `VERCEL_PROJECT_PRODUCTION_URL`
+ * automatically, so this works on a fresh import before any env var is set.
+ */
+function siteUrl(): URL {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) return new URL(explicit);
+
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (vercel) return new URL(`https://${vercel}`);
+
+  return new URL("http://localhost:3000");
+}
+
 export const metadata: Metadata = {
+  metadataBase: siteUrl(),
   title: {
     default: "Casa Colina — Абхазия",
     template: "%s · Casa Colina",
