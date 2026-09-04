@@ -208,6 +208,20 @@ over `ru.json`, so **a key missing from `en` or `ab` renders the Russian string
 rather than throwing** — adding a key to `ru.json` can never break another
 locale.
 
+That safety has a cost: an untranslated string is invisible until somebody
+reads the page. It is how `Аренда авто` shipped as the heading of the English
+`/cars` page. So:
+
+```bash
+npm run i18n:check          # list gaps
+node scripts/i18n-check.js --strict   # exit 1 if any (for CI)
+```
+
+It reports keys missing from a locale, keys byte-identical to the Russian
+(usually a copy-paste placeholder), and dead keys no longer in the source.
+**Run it after adding any message key.** `ab` legitimately reports ~200
+identical keys — Abkhaz is untranslated by design and falls back on purpose.
+
 `ab.json` and every `L()` call without a third argument are still the Russian
 text. They need an Abkhaz translator; the routing already serves them at `/ab`.
 

@@ -153,9 +153,13 @@
       "preserves": "Preserves"
     }
   },
+  "cars": {
+    "title": "Car rental",
+    "lead": "Cars registered and insured locally. Four-wheel drive for the gravel road up to Ritsa and the mountain villages."
+  },
   "rent": {
-    "title": "Rent",
-    "lead": "Everything a visitor needs by the day: transport, water and beach gear, furniture.",
+    "title": "Rent items",
+    "lead": "Everything you need for a day out: boards and kayaks for the water, loungers and tables for the beach, tents and bikes.",
     "perDay": "per day",
     "deposit": "Deposit",
     "quantityAvailable": "{count} available",
