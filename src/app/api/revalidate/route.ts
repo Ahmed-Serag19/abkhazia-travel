@@ -16,7 +16,13 @@ export const POST = route("revalidate.POST", async (req: Request) => {
     return fail("bad_json", "Body could not be parsed as JSON");
   }
 
-  const expected = process.env.REVALIDATE_SECRET ?? "dev-secret";
+  // Fail closed. A default secret is not a secret, and this endpoint can
+  // be used to hammer a site's regeneration until it falls over.
+  const expected = process.env.REVALIDATE_SECRET;
+  if (!expected) {
+    console.error("[revalidate] REVALIDATE_SECRET is not set — refusing");
+    return fail("not_found", "revalidate");
+  }
   if (body.secret !== expected) {
     return fail("not_found", "revalidate");
   }

@@ -1,9 +1,9 @@
-import { jsonSource } from "@/lib/data";
+import { getServerData } from "@/lib/data";
 import { ok, route } from "@/lib/api";
 
-// Serves the editable content file, so the API reflects owner edits. Swap
-// `jsonSource` for Drizzle queries when Supabase lands. Anything thrown below
+// Serves whichever source is configured — Supabase when DATABASE_URL is set,
+// the editable content file otherwise. Anything thrown below
 // becomes a logged, referenced 500 — never a stack trace in the response body.
 export const GET = route("sellers.GET", async () => {
-  return ok(await jsonSource.listSellers());
+  return ok(await getServerData().listSellers());
 });

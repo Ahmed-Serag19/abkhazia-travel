@@ -13,6 +13,13 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    // The build/maintenance scripts are plain CommonJS run by `node`, not
+    // part of the bundle. `require()` is correct there, and rewriting them as
+    // ESM to satisfy a rule aimed at application code buys nothing.
+    files: ["scripts/**/*.js"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
 ]);
 
 export default eslintConfig;

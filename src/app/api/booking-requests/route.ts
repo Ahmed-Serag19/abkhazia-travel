@@ -1,4 +1,4 @@
-import { jsonSource } from "@/lib/data";
+import { getServerData } from "@/lib/data";
 import { bookingRequestSchema } from "@/lib/validation";
 import { clientKey, fail, ok, rateLimit, route } from "@/lib/api";
 
@@ -32,9 +32,14 @@ export const POST = route("booking-requests.POST", async (req: Request) => {
     );
   }
 
-  // TODO(api): insert into Drizzle `bookingRequests`, then notify the owner
-  //            (Resend email / Telegram bot), both in one transaction.
-  //            Anything thrown here is caught by `route()` above.
-  const created = await jsonSource.createBookingRequest(parsed.data);
+  // Where this lands depends on configuration, not on this file: with
+  // DATABASE_URL set it is an INSERT into `booking_requests`, without it the
+  // content file. Anything thrown is caught by `route()` above and returned
+  // as a referenced 500 — which is the honest answer, because a guest told
+  // "sent" about a request that was never stored is this site's worst bug.
+  //
+  // TODO(notify): the owner still has to be told a request arrived. Resend
+  //               email or a Telegram message, after the insert commits.
+  const created = await getServerData().createBookingRequest(parsed.data);
   return ok(created, { status: 201 });
 });

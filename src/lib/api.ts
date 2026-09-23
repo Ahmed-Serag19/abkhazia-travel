@@ -14,6 +14,8 @@ export type ApiErrorCode =
   | "bad_json"
   | "validation"
   | "not_found"
+  | "unauthorized"
+  | "unavailable"
   | "rate_limited"
   | "upstream"
   | "internal";
@@ -22,6 +24,8 @@ const STATUS: Record<ApiErrorCode, number> = {
   bad_json: 400,
   validation: 422,
   not_found: 404,
+  unauthorized: 401,
+  unavailable: 503,
   rate_limited: 429,
   upstream: 502,
   internal: 500,

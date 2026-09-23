@@ -1,4 +1,4 @@
-import { jsonSource } from "@/lib/data";
+import { getServerData } from "@/lib/data";
 import { ok, route } from "@/lib/api";
 
 // Reviews are keyed by the slug of the property or excursion they belong to.
@@ -8,6 +8,6 @@ export const GET = route(
   "reviews.[slug].GET",
   async (_req: Request, ctx: { params: Promise<{ slug: string }> }) => {
     const { slug } = await ctx.params;
-    return ok(await jsonSource.listReviews(slug));
+    return ok(await getServerData().listReviews(slug));
   },
 );

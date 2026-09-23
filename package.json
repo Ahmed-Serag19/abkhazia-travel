@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "i18n:check": "node scripts/i18n-check.js"
+    "i18n:check": "node scripts/i18n-check.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node scripts/db-migrate.mjs",
+    "db:seed": "node scripts/db-seed.mjs",
+    "db:health": "node scripts/db-health.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.5",

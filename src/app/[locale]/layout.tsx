@@ -67,6 +67,18 @@ export const metadata: Metadata = {
     "Жильё на фермах, продукты из деревни, аренда и экскурсии по абхазскому побережью.",
 };
 
+/**
+ * Pages are statically generated and then re-generated at most this often.
+ *
+ * The owner console calls `/api/revalidate` after every edit, so a change is
+ * normally live within seconds. This is the floor under that: if the webhook
+ * is misconfigured, the console is offline, or somebody changes a row in the
+ * Supabase table editor by hand, the site still catches up on its own within
+ * five minutes instead of serving the build-time snapshot until the next
+ * deploy.
+ */
+export const revalidate = 300;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

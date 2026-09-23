@@ -19,6 +19,7 @@ import {
   text,
   timestamp,
   uuid,
+  index,
 } from "drizzle-orm/pg-core";
 import type { Localized, Money, Photo, RentalSpec } from "@/lib/types";
 
@@ -70,7 +71,7 @@ const strList = (name: string) =>
 export const hosts = pgTable("hosts", {
   id: uuid("id").defaultRandom().primaryKey(),
   name: text("name").notNull(),
-  photo: jsonb("photo").$type<Photo>().notNull(),
+  photo: jsonb("photo").$type<Photo>(),
   since: integer("since").notNull(),
   about: localized("about"),
   languages: strList("languages"),
@@ -120,7 +121,9 @@ export const units = pgTable("units", {
   pricePerNight: money("price_per_night"),
   photos: photos("photos"),
   amenities: strList("amenities"),
-});
+}, (t) => [
+  index("units_property_idx").on(t.propertyId),
+]);
 
 /** per-person rooms managed by a `hosted` property's host */
 export const rooms = pgTable("rooms", {
@@ -135,7 +138,9 @@ export const rooms = pgTable("rooms", {
   quantity: integer("quantity").notNull().default(1),
   photos: photos("photos"),
   amenities: strList("amenities"),
-});
+}, (t) => [
+  index("rooms_property_idx").on(t.propertyId),
+]);
 
 /* village -------------------------------------------------------- */
 
@@ -146,7 +151,7 @@ export const sellers = pgTable("sellers", {
   about: localized("about"),
   region: localized("region"),
   area: localized("area"),
-  photo: jsonb("photo").$type<Photo>().notNull(),
+  photo: jsonb("photo").$type<Photo>(),
 });
 
 export const provisions = pgTable("provisions", {
@@ -163,7 +168,10 @@ export const provisions = pgTable("provisions", {
   inStock: boolean("in_stock").notNull().default(true),
   photos: photos("photos"),
   deliveryNote: localized("delivery_note"),
-});
+}, (t) => [
+  index("provisions_seller_idx").on(t.sellerId),
+  index("provisions_category_idx").on(t.category),
+]);
 
 /* rent ---------------------------------------------------------- */
 
@@ -180,7 +188,9 @@ export const rentals = pgTable("rentals", {
   pickupPoint: localized("pickup_point"),
   photos: photos("photos"),
   specs: jsonb("specs").$type<RentalSpec[]>().notNull().default([]),
-});
+}, (t) => [
+  index("rentals_category_idx").on(t.category),
+]);
 
 /* explore ----------------------------------------------------- */
 
@@ -218,7 +228,34 @@ export const bookingRequests = pgTable("booking_requests", {
   locale: text("locale").notNull().default("ru"),
   status: bookingStatus("status").notNull().default("new"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
-});
+}, (t) => [
+  index("booking_requests_created_idx").on(t.createdAt),
+  index("booking_requests_status_idx").on(t.status),
+]);
+
+/* reviews ----------------------------------------------------- */
+
+/**
+ * Reviews are keyed by the *slug* of what was reviewed, not a foreign key,
+ * because a review can belong to a property or an excursion — two different
+ * tables. A slug is stable and unique across both, and the alternative
+ * (a polymorphic FK, or one nullable FK per subject type) buys nothing here.
+ */
+export const reviews = pgTable("reviews", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  subjectSlug: text("subject_slug").notNull(),
+  author: text("author").notNull(),
+  date: text("date").notNull(),
+  rating: real("rating").notNull(),
+  text: localized("text"),
+  booked: jsonb("booked").$type<Localized>(),
+  reply: jsonb("reply").$type<Localized>(),
+  published: boolean("published").notNull().default(true),
+}, (t) => [
+  index("reviews_subject_idx").on(t.subjectSlug),
+]);
+
+export type ReviewRow = typeof reviews.$inferSelect;
 
 export type PropertyRow = typeof properties.$inferSelect;
 export type UnitRow = typeof units.$inferSelect;

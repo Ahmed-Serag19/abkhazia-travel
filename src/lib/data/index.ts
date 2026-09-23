@@ -40,6 +40,8 @@ import {
 import { reviewsFor } from "./reviews";
 import { propertySummary } from "./summary";
 import { jsonSource } from "./json-source";
+import { dbSource } from "./db-source";
+import { hasDatabase } from "@/lib/db/client";
 
 export interface DataSource {
   listProperties(): Promise<PropertySummary[]>;
@@ -250,9 +252,21 @@ const apiSource: DataSource = {
 /* ------------------------------------------------------------------ */
 
 /**
- * `json` is the default: the content file the owner console edits. Set
- * `DATA_SOURCE=fixtures` to ignore it and serve the original seed data, or
- * `api` to go through the route handlers.
+ * Which source serves this request.
+ *
+ * The default is deliberately *conditional on configuration rather than on a
+ * flag*: set `DATABASE_URL` and the site talks to Supabase; leave it unset
+ * and it serves `data/content.json`. There is no state where the database is
+ * configured but ignored, and no deploy step that consists of remembering to
+ * flip a second variable.
+ *
+ * `DATA_SOURCE` overrides it explicitly, which is what you want when the
+ * database exists but you are debugging against the file:
+ *
+ *   db        Supabase via Drizzle
+ *   json      the editable content file
+ *   fixtures  the original hard-coded seed
+ *   api       through this app's own route handlers (integration testing)
  */
 export function getData(): DataSource {
   switch (process.env.DATA_SOURCE) {
@@ -260,10 +274,25 @@ export function getData(): DataSource {
       return apiSource;
     case "fixtures":
       return fixtureSource;
-    default:
+    case "json":
       return jsonSource;
+    case "db":
+      return dbSource;
+    default:
+      return hasDatabase() ? dbSource : jsonSource;
   }
 }
 
+/**
+ * The source route handlers use.
+ *
+ * Identical to `getData()` except that it never returns `apiSource` — a route
+ * handler calling the API would call itself.
+ */
+export function getServerData(): DataSource {
+  const source = getData();
+  return source === apiSource ? (hasDatabase() ? dbSource : jsonSource) : source;
+}
+
 /** the fixture source directly — the seed route reads from it */
-export { fixtureSource, jsonSource };
+export { fixtureSource, jsonSource, dbSource };
