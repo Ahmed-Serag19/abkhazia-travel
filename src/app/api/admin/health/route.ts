@@ -53,15 +53,15 @@ export const GET = route("admin.health.GET", async (req: Request) => {
   // what a visitor would actually be served, not what is in some table.
   let content: Record<string, number> | { error: string };
   try {
+    // Sequential for the same reason as everywhere else: concurrent queries
+    // pipeline onto one pooled connection and the transaction pooler stops
+    // answering. A health check that hangs is worse than no health check.
     const data = getServerData();
-    const [properties, rentals, excursions, provisions, sellers] =
-      await Promise.all([
-        data.listProperties(),
-        data.listRentals(),
-        data.listExcursions(),
-        data.listProvisions(),
-        data.listSellers(),
-      ]);
+    const properties = await data.listProperties();
+    const rentals = await data.listRentals();
+    const excursions = await data.listExcursions();
+    const provisions = await data.listProvisions();
+    const sellers = await data.listSellers();
     content = {
       properties: properties.length,
       rentals: rentals.length,

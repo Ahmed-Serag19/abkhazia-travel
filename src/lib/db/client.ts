@@ -50,6 +50,25 @@ export function getDb(): Database {
     // the request; fail fast so `error.tsx` can offer a retry.
     connect_timeout: 10,
     idle_timeout: 20,
+    /**
+     * Why this is not 1.
+     *
+     * A serverless instance serves one request at a time, so one connection
+     * looks sufficient and is kinder to Supavisor's pool (15 on a Nano
+     * project, shared with the owner console). It is a trap.
+     *
+     * When every connection is busy, postgres.js pipelines the next query
+     * down a connection already in flight. Supabase's *transaction* pooler
+     * does not support pipelining, and it fails in two ways, neither of them
+     * an error: it stops answering, or it returns the previous query's rows
+     * for the next query. With max: 1 that is not an edge case — it is what
+     * happens the moment React renders two segments at once, which during
+     * `next build` is constant. It showed up as an excursion whose photos
+     * were a seller's, and a build that died on `photos[0].src`.
+     *
+     * So: a small pool, with fan-out removed at the call sites (see
+     * `assemble()`) so the pool is not the thing holding it together.
+     */
     max: Number(process.env.DATABASE_POOL_MAX ?? 5),
   });
 

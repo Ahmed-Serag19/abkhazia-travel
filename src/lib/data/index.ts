@@ -268,6 +268,26 @@ const apiSource: DataSource = {
  *   fixtures  the original hard-coded seed
  *   api       through this app's own route handlers (integration testing)
  */
+/**
+ * `next build` renders 105 static pages across eleven worker processes. If
+ * those pages read the database, a deploy becomes eleven processes hammering
+ * a pooler that allows fifteen connections, and it fails the way it failed
+ * here: queries queued until Postgres' two-minute statement timeout killed
+ * them, on a different page each run.
+ *
+ * So the build reads the committed `data/content.json` instead. It is a
+ * snapshot of the same content, it needs no network, and a deploy can no
+ * longer be broken by the database being busy, paused, or slow.
+ *
+ * At runtime the database is authoritative: the first visitor to a page gets
+ * the build snapshot, ISR regenerates it from Postgres within
+ * `revalidate` (5 minutes, see `[locale]/layout.tsx`), and the owner
+ * console's call to /api/revalidate makes that immediate after an edit.
+ */
+function isBuildPhase(): boolean {
+  return process.env.NEXT_PHASE === "phase-production-build";
+}
+
 export function getData(): DataSource {
   switch (process.env.DATA_SOURCE) {
     case "api":
@@ -279,7 +299,7 @@ export function getData(): DataSource {
     case "db":
       return dbSource;
     default:
-      return hasDatabase() ? dbSource : jsonSource;
+      return hasDatabase() && !isBuildPhase() ? dbSource : jsonSource;
   }
 }
 
