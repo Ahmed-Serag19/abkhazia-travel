@@ -36,6 +36,24 @@ one backend, and the pooler hands you a different one each time.
 If you never set a database password (projects created through the dashboard
 often have none), set one under **Database → Reset database password** first.
 
+### The two settings that are easy to get wrong
+
+**Region.** Vercel runs functions in `iad1` (Washington) unless told
+otherwise. This database is in `eu-west-2` (London), so every query crossed
+the Atlantic. `vercel.json` pins both apps to `lhr1`. If you ever move the
+database, move this with it.
+
+**Pipelining.** [`src/lib/db/client.ts`](src/lib/db/client.ts) uses
+Supabase's documented serverless settings — pool of 1, `prepare: false`,
+`ssl: "require"` — plus `max_pipeline: 0`. postgres.js pipelines queries by
+default and the transaction pooler does not support it: a pipelined query is
+either never answered (the page hangs with no error) or answered with
+another query's rows. Both happened here. Supabase's own docs warn about it:
+https://supabase.com/docs/guides/database/connecting-to-postgres
+
+The two are related: pool size 1 is only safe *because* pipelining is off.
+With it on, one connection is the worst possible setting.
+
 ## 2. Fill in `.env.local`
 
 ```ini

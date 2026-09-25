@@ -26,7 +26,6 @@ import type {
   Seller,
 } from "@/lib/types";
 import { getDb, schema } from "@/lib/db/client";
-import { serialize } from "@/lib/db/serialize";
 import {
   toBookingRequest,
   toExcursion,
@@ -61,19 +60,15 @@ async function assemble(
   const ids = rows.map((r) => r.id);
   const hostIds = rows.map((r) => r.hostId).filter((id): id is string => !!id);
 
-  // Sequential, like everything else that touches this database — see
-  // `serialize.ts` for why concurrent queries are not an option here.
-  const unitRows = await db
-    .select()
-    .from(units)
-    .where(inArray(units.propertyId, ids));
-  const roomRows = await db
-    .select()
-    .from(rooms)
-    .where(inArray(rooms.propertyId, ids));
-  const hostRows = hostIds.length
-    ? await db.select().from(hosts).where(inArray(hosts.id, hostIds))
-    : [];
+  // Concurrent is safe: `max_pipeline: 0` in the client makes these queue on
+  // the connection rather than pipeline into Supavisor. See db/client.ts.
+  const [unitRows, roomRows, hostRows] = await Promise.all([
+    db.select().from(units).where(inArray(units.propertyId, ids)),
+    db.select().from(rooms).where(inArray(rooms.propertyId, ids)),
+    hostIds.length
+      ? db.select().from(hosts).where(inArray(hosts.id, hostIds))
+      : Promise.resolve([]),
+  ]);
 
   const byProperty = <T extends { propertyId: string }>(all: T[], id: string) =>
     all.filter((r) => r.propertyId === id);
@@ -88,7 +83,7 @@ async function assemble(
   );
 }
 
-const rawSource: DataSource = {
+export const dbSource: DataSource = {
   async listProperties(): Promise<PropertySummary[]> {
     const db = getDb();
     const rows = await db
@@ -220,47 +215,29 @@ const rawSource: DataSource = {
   },
 };
 
-/**
- * Every method, wrapped in the process-wide query queue.
- *
- * Applied here rather than inside each method so a method added later cannot
- * forget it. What it protects against is silent and intermittent, and a
- * convention people have to remember does not prevent that kind of bug.
- */
-export const dbSource: DataSource = Object.fromEntries(
-  Object.entries(rawSource).map(([name, method]) => [
-    name,
-    (...args: unknown[]) =>
-      serialize(() =>
-        (method as (...a: unknown[]) => Promise<unknown>)(...args),
-      ),
-  ]),
-) as unknown as DataSource;
-
 /* ------------------------------------------------------------------ */
 /* owner-facing reads and writes (the console, not the guest site)     */
 /* ------------------------------------------------------------------ */
 
-export function listBookingRequests(limit = 200) {
-  return serialize(async () => {
-    const db = getDb();
-    const rows = await db
-      .select()
-      .from(bookingRequests)
-      .orderBy(desc(bookingRequests.createdAt))
-      .limit(limit);
-    return rows.map(toBookingRequest);
-  });
+export async function listBookingRequests(limit = 200) {
+  const db = getDb();
+  const rows = await db
+    .select()
+    .from(bookingRequests)
+    .orderBy(desc(bookingRequests.createdAt))
+    .limit(limit);
+  return rows.map(toBookingRequest);
 }
 
-export function setBookingStatus(id: string, status: BookingRequest["status"]) {
-  return serialize(async () => {
-    const db = getDb();
-    const [row] = await db
-      .update(bookingRequests)
-      .set({ status })
-      .where(eq(bookingRequests.id, id))
-      .returning();
-    return row ? toBookingRequest(row) : null;
-  });
+export async function setBookingStatus(
+  id: string,
+  status: BookingRequest["status"],
+) {
+  const db = getDb();
+  const [row] = await db
+    .update(bookingRequests)
+    .set({ status })
+    .where(eq(bookingRequests.id, id))
+    .returning();
+  return row ? toBookingRequest(row) : null;
 }

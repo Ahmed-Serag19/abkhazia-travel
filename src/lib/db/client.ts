@@ -42,35 +42,47 @@ export function getDb(): Database {
 
   if (globalThis.__casacolina_db) return globalThis.__casacolina_db.db;
 
+  /**
+   * Supabase's documented configuration for serverless, plus the one setting
+   * their docs warn about and do not set for you.
+   * https://supabase.com/docs/guides/database/connecting-to-postgres
+   */
   const sql = postgres(url, {
-    // Required with the Supabase transaction pooler: prepared statements are
-    // per-connection and the pooler hands you a different one each time.
+    // Transaction mode has no prepared statements: each query may land on a
+    // different backend, and the statement prepared on the last one is gone.
     prepare: false,
-    // A serverless function that waits 30s for a connection has already lost
-    // the request; fail fast so `error.tsx` can offer a retry.
+
+    // THE ONE THAT MATTERS. postgres.js pipelines by default — with a query
+    // in flight it writes the next one onto the socket without waiting.
+    // Supavisor in transaction mode hands the backend back to its pool the
+    // moment it sees one reply finish, so a pipelined query is either never
+    // answered (the page hangs, no error) or answered with another query's
+    // rows. Both happened here: a login that spun for minutes, and a build
+    // that died because an excursion came back holding a seller's record.
+    //
+    // 0 makes a connection "full" after one statement, so concurrent queries
+    // queue in the driver instead. Promise.all is safe again. Verified against
+    // this database: ten concurrent queries on one connection, which never
+    // returned before, now take 550 ms with zero mismatched results.
+    max_pipeline: 0,
+
+    // One connection per instance. Supavisor is the pool; a second one here
+    // just holds a slot in Supavisor that another instance needed. This is
+    // Supabase's recommendation, and it is only safe *because* of the line
+    // above — max 1 with pipelining on is the worst possible combination.
+    max: Number(process.env.DATABASE_POOL_MAX ?? 1),
+
+    // Refuse to talk to the database unencrypted.
+    ssl: "require",
+
+    // A function that waits 30s for a connection has already lost the
+    // request; fail fast so error.tsx can offer a retry.
     connect_timeout: 10,
     idle_timeout: 20,
-    /**
-     * Why this is not 1.
-     *
-     * A serverless instance serves one request at a time, so one connection
-     * looks sufficient and is kinder to Supavisor's pool (15 on a Nano
-     * project, shared with the owner console). It is a trap.
-     *
-     * When every connection is busy, postgres.js pipelines the next query
-     * down a connection already in flight. Supabase's *transaction* pooler
-     * does not support pipelining, and it fails in two ways, neither of them
-     * an error: it stops answering, or it returns the previous query's rows
-     * for the next query. With max: 1 that is not an edge case — it is what
-     * happens the moment React renders two segments at once, which during
-     * `next build` is constant. It showed up as an excursion whose photos
-     * were a seller's, and a build that died on `photos[0].src`.
-     *
-     * So: a small pool, with fan-out removed at the call sites (see
-     * `assemble()`) so the pool is not the thing holding it together.
-     */
-    max: Number(process.env.DATABASE_POOL_MAX ?? 5),
-  });
+    // `max_pipeline` is read by the driver at runtime (postgres/src/index.js
+    // and connection.js) but is missing from the published 3.4.9 type
+    // definitions, hence the widening. It is not optional: see above.
+  } as postgres.Options<Record<string, never>>);
 
   const db = drizzle(sql, { schema });
   globalThis.__casacolina_db = { sql, db };
