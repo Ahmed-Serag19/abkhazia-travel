@@ -8,7 +8,6 @@
 
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
-import { DataSourceError } from "@/lib/data";
 
 export type ApiErrorCode =
   | "bad_json"
@@ -90,18 +89,6 @@ export function route<Args extends unknown[]>(
             details: error.flatten(),
           },
           { status: 422 },
-        );
-      }
-
-      if (error instanceof DataSourceError) {
-        console.error(`[api:${name}] upstream failure (${ref})`, error);
-        return NextResponse.json(
-          {
-            error: "upstream",
-            message: "A service this endpoint depends on did not respond",
-            reference: ref,
-          },
-          { status: 502 },
         );
       }
 

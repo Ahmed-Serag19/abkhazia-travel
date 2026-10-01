@@ -54,7 +54,7 @@ if (!response.ok) {
 const { database, content } = body;
 
 console.log(`\n${base}\n`);
-console.log(`  serving        ${database.serving}${database.override ? "  (DATA_SOURCE override)" : ""}`);
+console.log(`  serving        ${database.serving}`);
 console.log(`  DATABASE_URL   ${database.configured ? "set" : "not set"}`);
 
 if (database.configured) {
@@ -77,7 +77,7 @@ if (content.error) {
   console.log(`  content read FAILED: ${content.error}`);
 } else {
   for (const [key, value] of Object.entries(content)) {
-    const warn = value === 0 ? "   ← empty, run npm run db:seed" : "";
+    const warn = value === 0 ? "   ← empty, add some in the owner console" : "";
     console.log(`  ${String(value).padStart(4)}  ${key}${warn}`);
   }
 }

@@ -36,7 +36,7 @@ export function getDb(): Database {
   if (!url) {
     throw new Error(
       "DATABASE_URL is not set — no database to talk to. " +
-        "Either set it, or leave it unset to serve data/content.json.",
+        "The site reads only from Supabase; set it in .env.local or on Vercel.",
     );
   }
 

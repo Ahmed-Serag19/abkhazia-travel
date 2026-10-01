@@ -2,18 +2,10 @@
 
 Project: `lkrckfyimnxpigpppfrz`
 
-The site already talks to Postgres. Nothing is behind a feature flag and no
-code has to change — **setting `DATABASE_URL` is what switches it on**:
-
-| `DATABASE_URL` | what the site serves |
-|---|---|
-| unset | `data/content.json` (today) |
-| set | Supabase, through Drizzle |
-
-That is deliberate. A flag you have to remember to flip is a flag that gets
-forgotten, and "the database is configured but the site is ignoring it" is not
-a state worth being able to reach by accident. `DATA_SOURCE` still overrides
-it explicitly when you are debugging.
+The site reads only from Postgres — there is no local content file or seed
+data to fall back to. **Without `DATABASE_URL` the build fails**, which is
+deliberate: a deploy that quietly served made-up listings is worse than one
+that refuses to build.
 
 ---
 
@@ -89,35 +81,11 @@ The last thing it prints is which tables have row level security and how many
 policies each has. Anything showing `OFF` is reachable by anyone holding the
 anon key.
 
-## 4. Import the content
+## 4. Add content
 
-```bash
-npm run dev            # in one terminal
-npm run db:seed        # in another
-```
-
-This pushes `data/content.json` into the tables — 3 properties, 5 units, 3
-rooms, 3 sellers, 10 provisions, 8 rentals, 4 excursions, 12 reviews.
-
-Against the deployed site instead:
-
-```bash
-npm run db:seed -- https://your-site.vercel.app
-```
-
-The seeder calls `POST /api/admin/seed` rather than connecting to Postgres
-itself, so there is one implementation of the content → rows mapping
-([`src/lib/db/seed.ts`](src/lib/db/seed.ts)), typed against the same domain
-model the pages use, instead of a second untyped copy in a script that drifts.
-
-It replaces the content tables inside a transaction: readers keep seeing the
-old rows until it commits, content removed from the file is removed from the
-site, and ids are derived from the readable ones (`unit-ahmad-cedar` →
-a fixed UUID, see [`src/lib/db/ids.ts`](src/lib/db/ids.ts)) so re-importing
-does not orphan a booking request that pointed at one.
-
-**`booking_requests` is never touched by the import.** Those are real people's
-enquiries.
+Through the owner console (`abkhazia-admin`), which writes to the same
+database. A fresh database is empty and the site renders empty lists until
+something is added.
 
 ## 5. Check it
 
@@ -131,11 +99,7 @@ npm run db:health
   reachable      yes (74 ms)
   schema         applied
 
-     3  properties
-     8  rentals
-     4  excursions
-    10  provisions
-     3  sellers
+     0  properties
 ```
 
 This exists because four different problems look identical from a browser: no
@@ -153,10 +117,8 @@ Project → Settings → Environment Variables:
 | `REVALIDATE_SECRET` | same |
 | `NEXT_PUBLIC_SITE_URL` | the deployed URL |
 
-and **remove `NEXT_PUBLIC_DEMO`** — the booking form's "this goes nowhere"
-notice is no longer true once requests are being stored.
-
-Then redeploy and run `npm run db:seed -- https://<site>` once.
+Tick **Production and Preview** for `DATABASE_URL` — a build without it
+fails. Env var changes only reach deployments built after them, so redeploy.
 
 ---
 
@@ -212,7 +174,6 @@ Owner, bearer token:
 
 ```
 GET   /api/admin/health
-POST  /api/admin/seed
 GET   /api/admin/booking-requests           ?limit=200, no-store
 PATCH /api/admin/booking-requests/[id]      { status }
 ```
@@ -222,16 +183,9 @@ All of them return the same envelope on failure —
 
 ## Not done
 
-- **The owner console still reads `data/content.json` directly.** It has to
-  move onto `/api/admin/*` before the two apps can run on different machines.
-  The endpoints it needs exist and are listed above.
 - **Nobody is told when a request arrives.** The insert commits and that is
   the end of it. `RESEND_API_KEY` / `TELEGRAM_BOT_TOKEN` are reserved in
   `.env.example`; the hook is marked `TODO(notify)` in
   `src/app/api/booking-requests/route.ts`.
 - **The console's login authenticates nobody.** Supabase Auth is the intended
   answer and `@supabase/ssr` is already a dependency.
-- **The database path is typechecked but has never been run against a real
-  Postgres.** There was no database to reach while it was written. Step 3 to
-  step 5 above is the first execution of it, and `db:health` is there to say
-  plainly whether it worked.

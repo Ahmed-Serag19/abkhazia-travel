@@ -14,9 +14,7 @@
 
 import { adminAuthMessage, authorizeAdmin } from "@/lib/admin-auth";
 import { fail, ok, route } from "@/lib/api";
-import { hasDatabase } from "@/lib/db/client";
 import { listBookingRequests } from "@/lib/data/db-source";
-import { readContent } from "@/lib/data/content-file";
 
 export const dynamic = "force-dynamic";
 
@@ -27,12 +25,10 @@ export const GET = route("admin.bookingRequests.GET", async (req: Request) => {
   const url = new URL(req.url);
   const limit = Math.min(Number(url.searchParams.get("limit") ?? 200) || 200, 500);
 
-  const requests = hasDatabase()
-    ? await listBookingRequests(limit)
-    : (await readContent()).bookingRequests.slice(0, limit);
+  const requests = await listBookingRequests(limit);
 
   return ok(
-    { requests, source: hasDatabase() ? "db" : "file", count: requests.length },
+    { requests, source: "db", count: requests.length },
     { headers: { "cache-control": "no-store" } },
   );
 });

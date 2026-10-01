@@ -58,30 +58,21 @@ separate glyph. The files there now are Fluent Emoji placeholders; the
 generation recipe and swap instructions are in
 [`public/icons/README.md`](public/icons/README.md).
 
-## Dummy data → real API
+## Data
 
-Pages never import fixtures directly. They call:
+Pages never query the database directly. They call:
 
 ```ts
 const data = getData();
 const stays = await data.listProperties();
 ```
 
-`getData()` ([`src/lib/data/index.ts`](src/lib/data/index.ts)) returns one of four
-implementations of the same `DataSource` interface:
-
-| source | where it reads from |
-|---|---|
-| `db` | Supabase Postgres via Drizzle — [`db-source.ts`](src/lib/data/db-source.ts) |
-| `json` | [`data/content.json`](data/content.json), the file the owner console edits |
-| `fixtures` | [`src/lib/data/fixtures.ts`](src/lib/data/fixtures.ts) — the original seed |
-| `api` | `fetch` against `src/app/api/*` route handlers |
-
-**Which one is chosen is a consequence of configuration, not a flag:** set
-`DATABASE_URL` and it is `db`, leave it unset and it is `json`. `DATA_SOURCE`
-overrides that explicitly when you want the file while the database exists.
-
-Pages and route handlers never see the difference — the shapes are identical.
+`getData()` ([`src/lib/data/index.ts`](src/lib/data/index.ts)) returns the
+Supabase source ([`db-source.ts`](src/lib/data/db-source.ts)) — Postgres via
+Drizzle. It is the only source: there is no local seed or fallback file. The
+owner console writes to the same database, so what the owner edits is what
+guests see. Without `DATABASE_URL` the build fails rather than rendering
+something that is not the owner's catalogue.
 
 ## Database
 
@@ -90,34 +81,17 @@ stored as JSONB `{ ru, en, ab }`.
 
 ```bash
 npm run db:migrate    # create the tables and the RLS policies
-npm run db:seed       # import data/content.json into them
 npm run db:health     # what is this deployment actually serving?
 ```
+
+Content is added through the owner console (`abkhazia-admin`).
 
 Full runbook, including what to put in Vercel: **[SUPABASE.md](SUPABASE.md)**.
 
 Use the Supabase **transaction pooler** URL (port 6543) — the direct 5432
 connection exhausts under Vercel's function concurrency.
 
-## Deploying the showcase build to Vercel
-
-The site deploys as-is. Two things need saying because the platform is
-different from the laptop:
-
-**The filesystem is read-only.** Pages are fine — they're statically generated,
-so `data/content.json` is baked into the HTML at build time. The API routes
-read the file at *runtime*, which Next's tracer can't see through a
-`process.cwd()` path, so `next.config.ts` names it explicitly in
-`outputFileTracingIncludes`. Without that the deployed API routes 500.
-
-**Booking requests can't be stored.** A write is detected as impossible,
-degraded to memory, and the whole request is written to the function log
-prefixed `[booking-request] NOT PERSISTED`. It is recoverable from the Vercel
-logs, but nobody is watching it — so set `NEXT_PUBLIC_DEMO=1`, which puts a
-visible note on the booking form saying the request goes nowhere. **Don't
-share the link as a working booking site until Supabase is wired.**
-
-### Steps
+## Deploying to Vercel
 
 ```bash
 npm i -g vercel     # once
@@ -125,52 +99,20 @@ vercel              # from this directory; accept the detected Next.js preset
 vercel --prod
 ```
 
-Environment variables to set in Vercel (Project → Settings → Environment
-Variables):
-
-| name | value | why |
-|---|---|---|
-| `NEXT_PUBLIC_DEMO` | `1` | shows the "this is a demo" note on the booking form |
-| `NEXT_PUBLIC_SITE_URL` | your Vercel URL | absolute URLs in metadata |
-
-Leave `DATA_SOURCE` unset — the default reads `data/content.json`, which is
-committed, so **content edits you make locally ship on the next deploy**.
-
-`data/content.json` must be committed. `/api/dev-seed` refuses to run in
-production, so the file cannot be created on the server.
-
-### Verified against a real production build
-
-`next build` + `next start` with the deploy env set: all 104 pages 200, the
-custom 404 fires, the API routes read the traced content file (3 properties, 8
-rentals, 4 excursions), `/api/dev-seed` correctly 404s, a booking POST returns
-201 and lands in the log, and the demo notice renders.
-
-## The content file
-
-`data/content.json` is created by `POST /api/dev-seed` (dev only), which copies
-the fixtures into it. `?force=1` resets it; without that it refuses to
-overwrite existing content, because that endpoint would happily destroy an
-owner's edits.
-
-It is still the **editing** format even with the database wired: it is
-reviewable in a diff, the owner console writes it, and `npm run db:seed`
-imports it into Postgres. What changed is that it is no longer what the live
-site reads from once `DATABASE_URL` is set.
-
-The console pings `POST /api/revalidate` after every write so cached pages pick
-the change up.
+Set the variables listed in [SUPABASE.md § Vercel](SUPABASE.md#6-vercel) for
+**both Production and Preview** — a build without `DATABASE_URL` fails. Env
+var changes only apply to deployments built after them, so redeploy after
+editing one.
 
 ## Admin API
 
-Four endpoints behind a bearer token (`ADMIN_API_SECRET`), compared in
+Three endpoints behind a bearer token (`ADMIN_API_SECRET`), compared in
 constant time and **failing closed** when the variable is unset — an
 unconfigured deploy refuses them rather than publishing the booking inbox.
 
 | endpoint | what it does |
 |---|---|
 | `GET /api/admin/health` | configured? reachable? migrated? seeded? — four failures that look the same from a browser |
-| `POST /api/admin/seed` | import `data/content.json` into Postgres |
 | `GET /api/admin/booking-requests` | the owner's inbox, `no-store` |
 | `PATCH /api/admin/booking-requests/[id]` | confirm / decline / cancel |
 
@@ -214,7 +156,7 @@ replacement against that block before swapping it in.
 ## Translations
 
 - UI strings: `src/messages/{ru,en,ab}.json`
-- Content strings: the `L(ru, en, ab?)` helper in `fixtures.ts`
+- Content strings: JSONB `{ ru, en, ab }` columns, edited in the owner console
 
 Russian is the source language. `src/i18n/request.ts` deep-merges each locale
 over `ru.json`, so **a key missing from `en` or `ab` renders the Russian string

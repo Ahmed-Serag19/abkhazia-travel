@@ -215,8 +215,7 @@
       "bad_email": "Check the email address",
       "end_before_start": "Departure must be after arrival",
       "generic": "Couldn't send. Please try again."
-    },
-    "demoNotice": "This is a demo build. The request is not sent anywhere and nobody is watching for it — the database is not connected yet."
+    }
   },
   "amenities": {
     "kitchen": "Kitchen",

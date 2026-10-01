@@ -16,7 +16,7 @@ import { adminAuthMessage, authorizeAdmin } from "@/lib/admin-auth";
 import { fail, ok, route } from "@/lib/api";
 import { getServerData } from "@/lib/data";
 import { hasDatabase } from "@/lib/db/client";
-import { missingTables } from "@/lib/db/seed";
+import { missingTables } from "@/lib/db/health";
 
 export const dynamic = "force-dynamic";
 
@@ -27,8 +27,7 @@ export const GET = route("admin.health.GET", async (req: Request) => {
   const configured = hasDatabase();
   const database: Record<string, unknown> = {
     configured,
-    override: process.env.DATA_SOURCE ?? null,
-    serving: configured && !process.env.DATA_SOURCE ? "db" : (process.env.DATA_SOURCE ?? "json"),
+    serving: "db",
   };
 
   if (configured) {

@@ -107,11 +107,6 @@ export function BookingRequestForm({
         <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-soft">
           {t("successBody")}
         </p>
-        {DEMO ? (
-          <p className="mt-4 border-t border-ink/10 pt-3 text-[0.78rem] leading-snug text-ink-faint">
-            {t("demoNotice")}
-          </p>
-        ) : null}
       </div>
     );
   }
@@ -247,22 +242,9 @@ export function BookingRequestForm({
       <Button type="submit" size="lg" disabled={pending} className="mt-5 w-full">
         {pending ? t("submitting") : t("submit")}
       </Button>
-
-      {DEMO ? (
-        <p className="mt-3 rounded-xl border border-sand bg-sand/25 px-3 py-2.5 text-[0.78rem] leading-snug text-ink-soft">
-          {t("demoNotice")}
-        </p>
-      ) : null}
     </form>
   );
 }
-
-/**
- * The showcase deployment has no database, so a request submitted there is
- * logged and nothing more. Saying so is the difference between a demo and
- * quietly losing somebody's holiday booking.
- */
-const DEMO = process.env.NEXT_PUBLIC_DEMO === "1";
 
 const inputClass =
   "h-11 w-full rounded-xl border border-ink/15 bg-cream px-3 text-[0.95rem] text-ink " +
