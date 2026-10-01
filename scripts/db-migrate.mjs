@@ -122,6 +122,26 @@ try {
     }
   }
 
+  const storage = path.join(root, "supabase", "storage.sql");
+  if (existsSync(storage)) {
+    console.log("\nsupabase/storage.sql — photo bucket and upload policies");
+    await sql.unsafe(readFileSync(storage, "utf8"));
+    const [bucket] = await sql`
+      select public, file_size_limit, allowed_mime_types
+        from storage.buckets where id = 'photos'`;
+    const policies = await sql`
+      select policyname from pg_policies
+       where schemaname = 'storage' and tablename = 'objects'
+         and policyname like 'photos_admin_%'
+       order by policyname`;
+    console.log(
+      `  bucket photos: ${bucket.public ? "public read" : "PRIVATE"}, ` +
+        `max ${Math.round(bucket.file_size_limit / 1048576)} MB, ` +
+        `${bucket.allowed_mime_types.join(" ")}`,
+    );
+    console.log(`  write policies: ${policies.map((p) => p.policyname).join(", ")}`);
+  }
+
   console.log(
     `\nDone. ${applied} statements applied, ${skipped} already in place.`,
   );

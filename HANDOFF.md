@@ -18,13 +18,10 @@ that nobody has confirmed.
 
 ### A. Blockers — do not share the site with customers until these are done
 
-1. **Delete the 12 invented reviews.** They are written as if by real guests
-   (Ирина, Martin, Sofia…). The 4 on excursions are rendered on the excursion
-   pages. Publishing fabricated reviews as genuine is deceptive, and in most
-   places it is illegal under consumer-protection law. The console has no
-   reviews screen, so this needs a one-off delete in the database (or a small
-   console screen; see 1.C.4). Ask Claude to do it; it is a destructive change
-   to live data, so it should be confirmed first.
+1. ~~**Delete the 12 invented reviews.**~~ **Done 2026-10-01.** All 12 were
+   confirmed to be the seeded ones (none written by a real guest) and deleted
+   in one transaction. The `reviews` table is empty. Pages that cached them
+   refresh within 5 minutes of the next deploy.
 2. **Replace the sample catalogue with real listings.** All of these are
    invented: the host "Astan", 3 sellers (Ripa Family Dairy, Gagra Hills
    Apiary, Tsandripsh Garden), 9 products, 8 rentals, 4 excursions. Their
@@ -32,15 +29,14 @@ that nobody has confirmed.
    and enter the real ones. **Properties are already empty** and need adding:
    Ahmad Farm (whole houses) and Moaz Farm (rooms with a host) are real, but
    everything written about them earlier was not.
-3. **Real photos have no way in.** The console takes photo *paths* into this
-   repo's `public/` folder; it cannot upload. To show real photos of real
-   houses today, someone has to put the files in `public/photos/`, commit and
-   deploy, then type the paths into the console. That is not workable for an
-   owner. Fix: Supabase Storage upload in the console (recommended before
-   launch).
-   The 17 photos currently used are real, licensed (CC-BY-SA) photos of
-   Abkhazia from Wikimedia — fine for excursions to real places, wrong for
-   houses. Keep `public/photos/CREDITS.md` if any stay.
+3. ~~**Real photos have no way in.**~~ **Done 2026-10-01.** The console has
+   an **Upload photos** button on every photo field. Photos are resized in the
+   browser (longest side 2000 px, WebP), stored in the Supabase `photos`
+   bucket (`supabase/storage.sql`), and only accounts with the
+   `console_admin` role can upload. **Do one real upload yourself to confirm
+   it** — see the console handoff, 4.8, for exactly what was and wasn't
+   tested. The 17 Wikimedia photos (CC-BY-SA, `public/photos/CREDITS.md`) are
+   fine for excursions to real places, wrong for houses.
 4. **Real contact details.** The footer links to `hello@casacolina.example`
    and WhatsApp `wa.me/00000000000`. Both go nowhere.
    File: `src/components/site/Footer.tsx`.
@@ -83,7 +79,12 @@ that nobody has confirmed.
 3. **Email the guest when a request is confirmed.** It belongs in the same
    transaction as the status change (console: `TODO(notify)` in
    `src/lib/store.ts`).
-4. **Fix the rental with slug `f`.** That's the E-bike; it looks like an
+4. **Turn off open sign-ups** in Supabase → Authentication → Sign In /
+   Providers → "Allow new users to sign up". It is on (the default), so anyone
+   can create an account through the public API. Since 2026-10-01 that no
+   longer gets them into the console or lets them upload — both require the
+   `console_admin` role — so this is a second lock, not the only one.
+5. **Fix the rental with slug `f`.** That's the E-bike; it looks like an
    accidental edit in the console. Its page lives at `/rent/f`.
 
 ### C. After launch
@@ -95,6 +96,10 @@ that nobody has confirmed.
    brings the old reviews back. Add cleanup or a cascade.
 4. A reviews screen in the console, once there are real reviews to moderate.
    The table already has a `published` flag.
+5. Removing a photo from a listing does not delete the file from Storage
+   (harmless; it just stays). And a deleted file stays reachable at its old
+   link for a while from Supabase's CDN cache. Names are random, so this only
+   matters if something must come down urgently.
 
 ---
 
@@ -125,7 +130,9 @@ that nobody has confirmed.
 4. Secrets live only in `.env.local` (gitignored) and Vercel; the template is
    `.env.example`. **Never paste them into a chat.**
 5. Runbook: `SUPABASE.md`. Schema: `src/lib/db/schema.ts` → migration
-   `drizzle/0000_initial.sql`; row security in `supabase/policies.sql`.
+   `drizzle/0000_initial.sql`; row security in `supabase/policies.sql`;
+   photo bucket and upload rules in `supabase/storage.sql`. All three are
+   applied by `npm run db:migrate`.
 6. This repo owns the domain model. The console copies `types.ts`, `schema.ts`
    and `mappers.ts` from here with `npm run sync:core`. It does **not** copy
    `ids.ts` any more; the console owns that now.
@@ -137,14 +144,18 @@ that nobody has confirmed.
    pipelined query either hangs forever or **returns another query's rows**.
    That happened here: an excursion came back holding a seller's record.
    `max: 1` is only safe with this on.
-2. **`vercel.json` → `"regions": ["lhr1"]`.** Vercel defaults to Washington.
-3. **Row level security on every table** (`supabase/policies.sql`).
+2. **`max_pipeline: 0` breaks transactions** (postgres.js 3.4.9, the
+   latest; upstream PR #1218). This site has no transactions. If you add one,
+   run it on a separate client without that setting and `await` every
+   statement inside it in turn — the console's `getTxDb()` shows how.
+3. **`vercel.json` → `"regions": ["lhr1"]`.** Vercel defaults to Washington.
+4. **Row level security on every table** (`supabase/policies.sql`).
    `booking_requests` deliberately has **no policy**, so nobody can read it
    through Supabase's public API; it holds guests' phone numbers.
-4. **Fonts must include `cyrillic-ext` (U+0460–052F)** or Abkhaz letters break.
-5. **Two irreducible Stay modes**: `compound` (whole houses, priced per
+5. **Fonts must include `cyrillic-ext` (U+0460–052F)** or Abkhaz letters break.
+6. **Two irreducible Stay modes**: `compound` (whole houses, priced per
    night) and `hosted` (rooms priced per person, with a host).
-6. **Request-to-book.** No card payments on the site, by design.
+7. **Request-to-book.** No card payments on the site, by design.
 
 ## 5. For the next Claude
 
